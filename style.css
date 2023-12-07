@@ -1,4 +1,8 @@
-html,body,h1,h2,h3,h4,h5,h6 {font-family: "Roboto", sans-serif}
+html, body, h1, h2, h3, h4, h5, h6 {font-family: "Roboto", sans-serif}
+
+a {
+    cursor: pointer; /* Käsikursori kaikille linkeille */
+}
 
 .link-container a, p a {
     color: inherit;
@@ -33,4 +37,3 @@ html,body,h1,h2,h3,h4,h5,h6 {font-family: "Roboto", sans-serif}
 footer.w3-container {
     padding: 20px 0;
 }
-

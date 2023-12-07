@@ -1,11 +1,5 @@
 html, body, h1, h2, h3, h4, h5, h6 {font-family: "Roboto", sans-serif}
 
-@media screen and (max-width: 600px) {
-    .w3-col.m12 {
-      width: 100%;
-      display: block;
-    }
-  }
 
 a {
     cursor: pointer; /* Käsikursori kaikille linkeille */

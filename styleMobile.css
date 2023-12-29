@@ -54,7 +54,6 @@ footer.w3-container {
 }
 
 .profil-container img {
-    margin-right: 15px;
     width: 80px; /* Tässä määritellään kuvan leveys, muuta tarvittaessa */
 }
 
@@ -67,9 +66,7 @@ footer.w3-container {
 }
 
 .profile-pic {
-    margin-right: 15px;
     width: 80px; /* Tässä määritellään kuvan leveys, muuta tarvittaessa */
-    flex-shrink: 0; /* Estä kuvan kutistuminen pienillä näytöillä */
 }
 
 .profile-info {

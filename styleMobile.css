@@ -48,7 +48,6 @@ footer.w3-container {
 /* Profiiliosion tyyli */
 .profil-container {
     display: flex;
-    align-items: center;
     flex-wrap: wrap;
 }
 

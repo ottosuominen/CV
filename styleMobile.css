@@ -11,12 +11,6 @@ a {
     text-justify: inter-word;
 }
 
-body, html {
-    margin: 0;
-    padding: 0;
-    /* Lisää tarvittaessa muita tyylejä */
-}
-
 /* Kohdennetaan vain tietty w3-content div */
 div.w3-content.w3-margin-top {
     margin-top: 0; /* Poistaa ylämarginaalin */

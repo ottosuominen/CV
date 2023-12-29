@@ -15,10 +15,15 @@ a {
 div.w3-content.w3-margin-top {
     margin-top: 0; /* Poistaa ylämarginaalin */
     margin-left: 0; /* Poistaa vasemman marginaalin */
-    margin-right: 10 px; /* Poistaa oikean marginaalin */
+    margin-right: 10px; /* Poistaa oikean marginaalin */
     width: 100%; /* Asettaa leveyden 100% */
     padding: 0;
     /* Huomaa, että et halunnut poistaa paddingia, mutta jos haluat, lisää 'padding: 0;' */
+}
+
+.w3-container.w3-card.w3-white.w3-margin-bottom.profil-container {
+    padding: 0; /* Poistaa paddingin */
+    margin-left: 0; /* Poistaa vasemman marginaalin */
 }
 
 

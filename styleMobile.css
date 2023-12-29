@@ -61,7 +61,8 @@ Copy code
 
 .profile-pic {
     margin-right: 15px;
-    width: 80px; /* Säädä kuvan leveys sopivaksi */
+    width: 50px; /* Säädä kuvan leveys sopivaksi */
+    height: 80px;
 }
 
 .profile-info h4, .profile-info h6 {
@@ -78,7 +79,7 @@ Copy code
     .profile-pic {
         margin-right: 0;
         margin-bottom: 10px;
-        width: 50%; /* Säädä kuvan leveys sopivaksi mobiililaitteille */
+        width: 30%; /* Säädä kuvan leveys sopivaksi mobiililaitteille */
     }
 
     /* Lisää tarvittaessa muita sääntöjä mobiilinäkymälle */

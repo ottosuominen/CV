@@ -43,10 +43,27 @@ footer.w3-container {
     padding: 20px 0;
 }
 
+/* Profiiliosion tyyli */
+.w3-container {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.w3-container img {
+    margin-right: 15px;
+}
+
 @media screen and (max-width: 768px) {
     .w3-third, .w3-twothird {
         width: 100%;
         display: block;
     }
-    /* Lisää muutokset tähän tarpeen mukaan */
+    .w3-container {
+        display: block;
+    }
+    .w3-container img {
+        margin-bottom: 10px;
+    }
+    /* Lisää muita mobiilimuutoksia tarpeen mukaan */
 }

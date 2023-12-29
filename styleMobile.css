@@ -45,35 +45,20 @@ footer.w3-container {
     padding: 20px 0;
 }
 
-/* Profiiliosion tyyli */
+/* Profiiliosion tyyli mobiililaitteille */
 .profil-container {
-    display: flex;
-    align-items: center;
-    flex-wrap: wrap;
+    display: block; /* Aseta elementit allekkain */
+    text-align: center; /* Keskitä sisältö */
 }
 
 .profil-container img {
-    margin-right: 15px;
-    width: 80px; /* Tässä määritellään kuvan leveys, muuta tarvittaessa */
+    margin-bottom: 10px;
+    width: 50%; /* Säädä kuvan kokoa sopivaksi */
+    /* Varmista, että kuva on keskitetty */
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
 }
 
-/* Mobiililaitteiden näkymä */
-@media screen and (max-width: 768px) {
-    .w3-third, .w3-twothird {
-        width: 100%;
-        display: block;
-    }
+/* Muut säännöt pysyvät samoina. Voit tehdä lisämuutoksia tarpeen mukaan. */
 
-    .profil-container {
-        display: block;
-        text-align: center;
-    }
-
-    .profil-container img {
-        margin-right: 0;
-        margin-bottom: 10px;
-        width: 30%; /* Mobiililaitteille suurempi leveys */
-    }
-
-    /* Muut mahdolliset mobiilimuutokset */
-}

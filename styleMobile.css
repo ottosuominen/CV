@@ -17,6 +17,7 @@ div.w3-content.w3-margin-top {
     margin-left: 0; /* Poistaa vasemman marginaalin */
     margin-right: 10 px; /* Poistaa oikean marginaalin */
     width: 100%; /* Asettaa leveyden 100% */
+    padding: 0;
     /* Huomaa, että et halunnut poistaa paddingia, mutta jos haluat, lisää 'padding: 0;' */
 }
 

@@ -11,6 +11,16 @@ a {
     text-justify: inter-word;
 }
 
+/* Kohdennetaan vain tietty w3-content div */
+div.w3-content.w3-margin-top {
+    margin-top: 0; /* Poistaa ylämarginaalin */
+    margin-left: 0; /* Poistaa vasemman marginaalin */
+    margin-right: 0; /* Poistaa oikean marginaalin */
+    width: 100%; /* Asettaa leveyden 100% */
+    /* Huomaa, että et halunnut poistaa paddingia, mutta jos haluat, lisää 'padding: 0;' */
+}
+
+
 
 .link-container a, p a {
     color: inherit;

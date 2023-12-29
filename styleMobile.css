@@ -11,17 +11,6 @@ a {
     text-justify: inter-word;
 }
 
-.w3-content {
-    max-width: 100%; /* Säädä maksimileveys 100%:iin */
-    margin: 0; /* Poista marginaalit */
-    padding: 0; /* Poista padding */
-}
-
-.w3-container {
-    padding: 0; /* Poista padding */
-    /* Jos tarvitset sisätilaa, säädä tämä arvo harkiten */
-}
-
 
 .link-container a, p a {
     color: inherit;

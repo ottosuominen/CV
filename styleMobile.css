@@ -1,0 +1,47 @@
+html, body, h1, h2, h3, h4, h5, h6 {font-family: "Roboto", sans-serif}
+
+a {
+    cursor: pointer; /* Käsikursori kaikille linkeille */
+}
+
+.link-container a, p a {
+    color: inherit;
+    text-decoration: none;
+}
+
+.link-container:hover a, .link-container:hover p a, p:hover a {
+    color: #009688;
+}
+
+.w3-content {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.w3-row-padding {
+    flex-grow: 1;
+    display: flex;
+    align-items: stretch;
+}
+
+.w3-third, .w3-twothird {
+    display: flex;
+    flex-direction: column;
+}
+
+.w3-white {
+    flex: 1;
+}
+
+footer.w3-container {
+    padding: 20px 0;
+}
+
+@media screen and (max-width: 768px) {
+    .w3-third, .w3-twothird {
+        width: 100%;
+        display: block;
+    }
+    /* Lisää muutokset tähän tarpeen mukaan */
+}

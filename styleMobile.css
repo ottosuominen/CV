@@ -45,13 +45,6 @@ footer.w3-container {
     padding: 20px 0;
 }
 
-GPT
-Selvä, keskitymme nyt muokkaamaan profiiliosiota CSS:llä. Tavoitteena on, että kuva on sopivan kokoinen ja sijoitettu tekstiosion viereen, kun näyttö on tarpeeksi leveä, ja sijoitettu tekstin yläpuolelle mobiililaitteissa, kun näyttö on kapeampi.
-
-CSS-säännöt profiiliosiolle voivat näyttää tältä:
-
-css
-Copy code
 /* Profiiliosion tyyli */
 .profil-container {
     display: flex;
@@ -59,29 +52,7 @@ Copy code
     flex-wrap: wrap;
 }
 
-.profile-pic {
+.profil-container img {
     margin-right: 15px;
-    width: 50px; /* Säädä kuvan leveys sopivaksi */
-    height: 80px;
+    width: 80px; /* Tässä määritellään kuvan leveys, muuta tarvittaessa */
 }
-
-.profile-info h4, .profile-info h6 {
-    margin: 0; /* Poista oletusmarginaalit */
-}
-
-/* Mobiililaitteiden näkymä */
-@media screen and (max-width: 768px) {
-    .profil-container {
-        display: block;
-        text-align: center;
-    }
-
-    .profile-pic {
-        margin-right: 0;
-        margin-bottom: 10px;
-        width: 30%; /* Säädä kuvan leveys sopivaksi mobiililaitteille */
-    }
-
-    /* Lisää tarvittaessa muita sääntöjä mobiilinäkymälle */
-}
-

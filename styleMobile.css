@@ -78,16 +78,16 @@ footer.w3-container {
 }
 
 /* Määritellään, miten elementit käyttäytyvät pienillä näytöillä */
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 400px) {
     .profil-container {
         flex-direction: column;
         align-items: flex-start;
     }
 
     .profile-pic {
-        margin-bottom: 10px;
-        width: 100%; /* Aseta kuva täyttämään koko tila mobiilissa */
+        width: 30%; /* Aseta kuva täyttämään koko tila mobiilissa */
         max-width: 80px; /* Määritä maksimileveys */
+        
     }
 
     .profile-info {

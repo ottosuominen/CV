@@ -1,4 +1,6 @@
-html, body, h1, h2, h3, h4, h5, h6 {font-family: "Roboto", sans-serif}
+html, body, h1, h2, h3, h4, h5, h6 {
+    font-family: "Roboto", sans-serif;
+}
 
 a {
     cursor: pointer; /* Käsikursori kaikille linkeille */
@@ -52,7 +54,26 @@ footer.w3-container {
 
 .profil-container img {
     margin-right: 15px;
-    width: 30%; /* Aseta kuvalle haluamasi leveys */
+    width: 100px; /* Tässä määritellään kuvan leveys, muuta tarvittaessa */
 }
 
+/* Mobiililaitteiden näkymä */
+@media screen and (max-width: 768px) {
+    .w3-third, .w3-twothird {
+        width: 100%;
+        display: block;
+    }
 
+    .profil-container {
+        display: block;
+        text-align: center;
+    }
+
+    .profil-container img {
+        margin-right: 0;
+        margin-bottom: 10px;
+        width: 50%; /* Mobiililaitteille suurempi leveys */
+    }
+
+    /* Muut mahdolliset mobiilimuutokset */
+}

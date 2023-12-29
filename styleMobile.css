@@ -55,6 +55,17 @@ footer.w3-container {
     width: 100px; /* Aseta kuvalle haluamasi leveys */
 }
 
+.profil-container {
+    display: flex;
+    align-items: center;
+}
+
+.profil-container img {
+    margin-right: 15px;
+    width: 30%; /* tai jokin toinen haluamasi leveys */
+}
+
+
 @media screen and (max-width: 768px) {
     .w3-third, .w3-twothird {
         width: 100%;

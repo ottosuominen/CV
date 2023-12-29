@@ -44,14 +44,15 @@ footer.w3-container {
 }
 
 /* Profiiliosion tyyli */
-.w3-container {
+.w3-container.profil-container {
     display: flex;
     align-items: center;
     flex-wrap: wrap;
 }
 
-.w3-container img {
+.w3-container.profil-container img {
     margin-right: 15px;
+    width: 100px; /* Aseta kuvalle haluamasi leveys */
 }
 
 @media screen and (max-width: 768px) {
@@ -59,11 +60,13 @@ footer.w3-container {
         width: 100%;
         display: block;
     }
-    .w3-container {
+    .w3-container.profil-container {
         display: block;
     }
-    .w3-container img {
+    .w3-container.profil-container img {
+        margin-right: 0;
         margin-bottom: 10px;
+        width: 100%; /* Aseta kuvalle haluamasi leveys pienillä näytöillä */
     }
     /* Lisää muita mobiilimuutoksia tarpeen mukaan */
 }

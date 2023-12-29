@@ -44,13 +44,13 @@ footer.w3-container {
 }
 
 /* Profiiliosion tyyli */
-.w3-container.profil-container {
+.profil-container {
     display: flex;
     align-items: center;
     flex-wrap: wrap;
 }
 
-.w3-container.profil-container img {
+.profil-container img {
     margin-right: 15px;
     width: 30%; /* Aseta kuvalle haluamasi leveys */
 }

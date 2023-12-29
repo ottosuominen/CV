@@ -52,32 +52,7 @@ footer.w3-container {
 
 .w3-container.profil-container img {
     margin-right: 15px;
-    width: 100px; /* Aseta kuvalle haluamasi leveys */
-}
-
-.profil-container {
-    display: flex;
-    align-items: center;
-}
-
-.profil-container img {
-    margin-right: 15px;
-    width: 100px; /* tai jokin toinen haluamasi leveys */
+    width: 30%; /* Aseta kuvalle haluamasi leveys */
 }
 
 
-@media screen and (max-width: 768px) {
-    .w3-third, .w3-twothird {
-        width: 100%;
-        display: block;
-    }
-    .w3-container.profil-container {
-        display: block;
-    }
-    .w3-container.profil-container img {
-        margin-right: 0;
-        margin-bottom: 10px;
-        width: 100%; /* Aseta kuvalle haluamasi leveys pienillä näytöillä */
-    }
-    /* Lisää muita mobiilimuutoksia tarpeen mukaan */
-}

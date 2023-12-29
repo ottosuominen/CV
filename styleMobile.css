@@ -45,14 +45,8 @@ footer.w3-container {
     padding: 20px 0;
 }
 
-/* Profiiliosion tyyli */
-.profil-container {
-    display: flex;
-    align-items: center;
-    flex-wrap: wrap;
-}
-
-.profil-container img {
-    margin-right: 15px;
-    width: 80px; /* Tässä määritellään kuvan leveys, muuta tarvittaessa */
-}
+.profile-pic {
+        margin-right: 0;
+        margin-bottom: 10px;
+        width: 50%; /* Säädä kuvan leveys sopivaksi mobiililaitteille */
+    }

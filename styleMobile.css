@@ -74,10 +74,12 @@ footer.w3-container {
     display: flex;
     align-items: center;
     flex-wrap: wrap;
+    justify-content: flex-start;
 }
 
 .profile-pic {
     width: 80px; /* Tässä määritellään kuvan leveys, muuta tarvittaessa */
+    margin-right: 10px; /* Voit säätää tätä arvoa haluamaksesi tilaksi kuvan ja tekstin välille */
 }
 
 .profile-info {

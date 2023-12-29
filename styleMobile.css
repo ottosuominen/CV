@@ -53,7 +53,7 @@ footer.w3-container {
 
 .profil-container img {
     margin-bottom: 10px;
-    width: 50%; /* Säädä kuvan kokoa sopivaksi */
+    width: 10%; /* Säädä kuvan kokoa sopivaksi */
     /* Varmista, että kuva on keskitetty */
     display: block;
     margin-left: auto;

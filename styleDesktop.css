@@ -101,7 +101,7 @@ footer.w3-container {
     }
 
     .profile-pic {
-        width: 30%; /* Aseta kuva täyttämään koko tila mobiilissa */
+        width: 20%; /* Aseta kuva täyttämään koko tila mobiilissa */
         max-width: 80px; /* Määritä maksimileveys */
         
     }

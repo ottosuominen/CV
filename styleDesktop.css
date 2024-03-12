@@ -110,3 +110,9 @@ footer.w3-container {
         width: 100%; /* Aseta teksti täyttämään koko tila mobiilissa */
     }
 }
+
+.w3-container, .w3-card {
+    /* Esimerkki: poista varjot ja reunukset tulostuksessa */
+    box-shadow: none !important;
+    border: none !important;
+  }

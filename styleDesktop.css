@@ -122,3 +122,8 @@ footer.w3-container {
   head, footer {
     display: none !important;
   }
+
+@page {
+    margin: 0;
+    size: auto; /* Määrittää tulostusalueen koon automaattisesti */
+  }

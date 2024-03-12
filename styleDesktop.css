@@ -93,22 +93,22 @@ footer.w3-container {
 }
 
 /* Määritellään, miten elementit käyttäytyvät pienillä näytöillä */
-@media screen and (max-width: 1200px) {
-    .profil-container {
-        flex-direction: column;
-        align-items: flex-start;
-        justify-content: center;
-    }
+/* Profiiliosion tyyli */
+.profil-container {
+    display: flex;
+    align-items: center;
+    flex-wrap: nowrap; /* Estä elementtien siirtyminen allekkain */
+    justify-content: flex-start;
+}
 
-    .profile-pic {
-        width: 20%; /* Aseta kuva täyttämään koko tila mobiilissa */
-        max-width: 80px; /* Määritä maksimileveys */
-        
-    }
+.profil-container img {
+    width: 80px;
+    margin-right: 10px;
+}
 
-    .profile-info {
-        width: 100%; /* Aseta teksti täyttämään koko tila mobiilissa */
-    }
+.profile-info {
+    flex-grow: 1;
+    min-width: 0;
 }
 
 .w3-container, .w3-card {

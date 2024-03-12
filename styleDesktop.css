@@ -116,3 +116,9 @@ footer.w3-container {
     box-shadow: none !important;
     border: none !important;
   }
+
+@media print {
+  /* Piilottaa kaikki otsikot ja URL-osoitteet tulostuksessa */
+  head, footer {
+    display: none !important;
+  }

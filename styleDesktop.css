@@ -3,7 +3,7 @@ html, body, h1, h2, h3, h4, h5, h6 {
 }
 
 a {
-    cursor: pointer; /* Käsikursori kaikille linkeille */
+    cursor: pointer;
 }
 
 .w3-container p {
@@ -11,20 +11,16 @@ a {
     text-justify: inter-word;
 }
 
-/* Kohdennetaan vain tietty w3-content div */
 div.w3-content.w3-margin-top {
-    margin: auto; /* Keskitä sisältö */
-    width: 100%; /* Asettaa leveyden 100% */
+    margin: auto;
+    width: 100%;
     padding: 0;
-    /* Huomaa, että et halunnut poistaa paddingia, mutta jos haluat, lisää 'padding: 0;' */
 }
 
 .w3-container.w3-card.w3-white.w3-margin-bottom.profil-container {
-    padding: 0; /* Poistaa paddingin */
-    margin-left: 0; /* Poistaa vasemman marginaalin */
+    padding: 0;
+    margin-left: 0;
 }
-
-
 
 .link-container a, p a {
     color: inherit;
@@ -36,8 +32,8 @@ div.w3-content.w3-margin-top {
 }
 
 .w3-content {
-    max-width: 1200px; /* Maksimileveys sisällölle */
-    margin: auto; /* Keskitä sisältö */
+    max-width: 1200px;
+    margin: auto;
     display: flex;
     flex-direction: column;
     min-height: 100vh;
@@ -62,7 +58,6 @@ footer.w3-container {
     padding: 20px 0;
 }
 
-/* Profiiliosion tyyli */
 .profil-container {
     display: flex;
     align-items: center;
@@ -70,11 +65,9 @@ footer.w3-container {
 }
 
 .profil-container img {
-    width: 80px; /* Tässä määritellään kuvan leveys, muuta tarvittaessa */
+    width: 80px;
 }
 
-
-/* Profiiliosion tyyli */
 .profil-container {
     display: flex;
     align-items: center;
@@ -83,21 +76,19 @@ footer.w3-container {
 }
 
 .profile-pic {
-    width: 80px; /* Tässä määritellään kuvan leveys, muuta tarvittaessa */
-    margin-right: 10px; /* Voit säätää tätä arvoa haluamaksesi tilaksi kuvan ja tekstin välille */
+    width: 80px;
+    margin-right: 10px;
 }
 
 .profile-info {
-    flex-grow: 1; /* Ota jäljellä oleva tila käyttöön */
-    min-width: 0; /* Estä tekstielementin venyminen yli vanhemman leveyden */
+    flex-grow: 1;
+    min-width: 0;
 }
 
-/* Määritellään, miten elementit käyttäytyvät pienillä näytöillä */
-/* Profiiliosion tyyli */
 .profil-container {
     display: flex;
     align-items: center;
-    flex-wrap: nowrap; /* Estä elementtien siirtyminen allekkain */
+    flex-wrap: nowrap;
     justify-content: flex-start;
 }
 
@@ -112,19 +103,17 @@ footer.w3-container {
 }
 
 .w3-container, .w3-card {
-    /* Esimerkki: poista varjot ja reunukset tulostuksessa */
     box-shadow: none !important;
     border: none !important;
-  }
+}
 
 @media print {
-  /* Piilottaa kaikki otsikot ja URL-osoitteet tulostuksessa */
   head, footer {
     display: none !important;
   }
 
 @page {
     margin: 0;
-    size: auto; /* Määrittää tulostusalueen koon automaattisesti */
+    size: auto;
   }
 }

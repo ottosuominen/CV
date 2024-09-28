@@ -3,7 +3,7 @@ html, body, h1, h2, h3, h4, h5, h6 {
 }
 
 a {
-    cursor: pointer; /* Käsikursori kaikille linkeille */
+    cursor: pointer;
 }
 
 .w3-container p {
@@ -11,22 +11,18 @@ a {
     text-justify: inter-word;
 }
 
-/* Kohdennetaan vain tietty w3-content div */
 div.w3-content.w3-margin-top {
-    margin-top: 0; /* Poistaa ylämarginaalin */
-    margin-left: 0; /* Poistaa vasemman marginaalin */
-    margin-right: 10px; /* Poistaa oikean marginaalin */
-    width: 100%; /* Asettaa leveyden 100% */
+    margin-top: 0;
+    margin-left: 0;
+    margin-right: 10px;
+    width: 100%;
     padding: 0;
-    /* Huomaa, että et halunnut poistaa paddingia, mutta jos haluat, lisää 'padding: 0;' */
 }
 
 .w3-container.w3-card.w3-white.w3-margin-bottom.profil-container {
-    padding: 0; /* Poistaa paddingin */
-    margin-left: 0; /* Poistaa vasemman marginaalin */
+    padding: 0;
+    margin-left: 0;
 }
-
-
 
 .link-container a, p a {
     color: inherit;
@@ -62,7 +58,6 @@ footer.w3-container {
     padding: 20px 0;
 }
 
-/* Profiiliosion tyyli */
 .profil-container {
     display: flex;
     align-items: center;
@@ -70,11 +65,9 @@ footer.w3-container {
 }
 
 .profil-container img {
-    width: 80px; /* Tässä määritellään kuvan leveys, muuta tarvittaessa */
+    width: 80px;
 }
 
-
-/* Profiiliosion tyyli */
 .profil-container {
     display: flex;
     align-items: center;
@@ -83,16 +76,15 @@ footer.w3-container {
 }
 
 .profile-pic {
-    width: 80px; /* Tässä määritellään kuvan leveys, muuta tarvittaessa */
-    margin-right: 10px; /* Voit säätää tätä arvoa haluamaksesi tilaksi kuvan ja tekstin välille */
+    width: 80px;
+    margin-right: 10px;
 }
 
 .profile-info {
-    flex-grow: 1; /* Ota jäljellä oleva tila käyttöön */
-    min-width: 0; /* Estä tekstielementin venyminen yli vanhemman leveyden */
+    flex-grow: 1;
+    min-width: 0;
 }
 
-/* Määritellään, miten elementit käyttäytyvät pienillä näytöillä */
 @media screen and (max-width: 400px) {
     .profil-container {
         flex-direction: column;
@@ -100,12 +92,11 @@ footer.w3-container {
     }
 
     .profile-pic {
-        width: 30%; /* Aseta kuva täyttämään koko tila mobiilissa */
-        max-width: 80px; /* Määritä maksimileveys */
-        
+        width: 30%;
+        max-width: 80px;
     }
 
     .profile-info {
-        width: 100%; /* Aseta teksti täyttämään koko tila mobiilissa */
+        width: 100%;
     }
 }

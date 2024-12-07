@@ -26,7 +26,12 @@ div.w3-content.w3-margin-top {
     margin-left: 0; /* Poistaa vasemman marginaalin */
 }
 
-
+ul.w3-small li {
+    font-size: 1.2em; /* Suurentaa fonttikokoa */
+    margin-left: 25px; /* Väliä pointerin ja tekstin välillä */
+    line-height: 1.8; /* Lisää tilaa rivien väliin */
+    list-style-type: disc; /* Muodostaa selkeän pisteen */
+}
 
 .link-container a, p a {
     color: inherit;

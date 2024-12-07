@@ -92,26 +92,24 @@ footer.w3-container {
     min-width: 0; /* Estä tekstielementin venyminen yli vanhemman leveyden */
 }
 
-.mobile-flex-container {
+.flex-container {
     display: flex;
-    gap: 20px;
-    margin-bottom: 20px;
+    gap: 20px; /* Väli sarakkeiden välille */
 }
 
-.mobile-flex-item {
+.flex-item {
     flex: 1;
-    background: white;
-    padding: 16px;
+    min-width: 300px; /* Pienin sallittu leveys */
+    margin: 10px; /* Lisää marginaalia */
 }
 
-/* Media query mobiilille */
-@media screen and (max-width: 600px) {
-    .mobile-flex-container {
-        flex-direction: column;
-    }
-    
-    .mobile-flex-item {
-        margin-bottom: 20px;
+.flex-item.left {
+    margin-right: 10px; /* Erottelu vasemmalle sarakkeelle */
+}
+
+@media screen and (max-width: 768px) {
+    .flex-container {
+        flex-direction: column; /* Muuttaa sarakkeet pystysuuntaisiksi mobiilissa */
     }
 }
 

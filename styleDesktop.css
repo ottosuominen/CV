@@ -19,6 +19,15 @@ div.w3-content.w3-margin-top {
     /* Huomaa, että et halunnut poistaa paddingia, mutta jos haluat, lisää 'padding: 0;' */
 }
 
+.link-container a:hover {
+    color: #009688; /* Teal väri hoverille */
+}
+
+.link-container a:hover .link-text {
+    color: #009688; /* Vihreä hover-tilassa */
+    opacity: 1; /* Poistaa läpinäkyvyyden hoverissa */
+}
+
 .w3-container.w3-card.w3-white.w3-margin-bottom.profil-container {
     padding: 0; /* Poistaa paddingin */
     margin-left: 0; /* Poistaa vasemman marginaalin */

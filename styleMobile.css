@@ -104,9 +104,14 @@ footer.w3-container {
     padding: 16px;
 }
 
+/* Media query mobiilille */
 @media screen and (max-width: 600px) {
     .mobile-flex-container {
         flex-direction: column;
+    }
+    
+    .mobile-flex-item {
+        margin-bottom: 20px;
     }
 }
 

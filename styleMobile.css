@@ -1,120 +1,111 @@
-/* Reset and base styles */
 html, body, h1, h2, h3, h4, h5, h6 {
     font-family: "Roboto", sans-serif;
-    margin: 0;
-    padding: 0;
 }
 
-/* Main container styles */
-.w3-content {
-    max-width: 1400px;
-    margin: 0 auto;
-    padding: 16px;
+a {
+    cursor: pointer; /* Käsikursori kaikille linkeille */
 }
 
-/* Grid layout */
-.w3-row-padding {
-    display: flex;
-    flex-wrap: wrap;
-    margin: -8px;  /* Compensate for child padding */
-}
-
-/* Column layouts */
-.flex-container {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 16px;
-    width: 100%;
-    margin-bottom: 16px;
-}
-
-.flex-item {
-    flex: 1;
-    min-width: 300px;
-}
-
-/* Profile container */
-.profil-container {
-    display: flex;
-    align-items: center;
-    padding: 16px;
-    margin-bottom: 16px;
-    gap: 16px;
-}
-
-.profile-pic {
-    width: 80px;
-    height: auto;
-    border-radius: 4px;
-}
-
-.profile-info {
-    flex: 1;
-}
-
-/* Card styles */
-.w3-card {
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-    border-radius: 4px;
-    background: white;
-    padding: 16px;
-    margin-bottom: 16px;
-}
-
-/* Typography adjustments */
 .w3-container p {
     text-align: justify;
-    margin-bottom: 8px;
+    text-justify: inter-word;
 }
 
-/* Link styles */
-.link-container a {
+/* Kohdennetaan vain tietty w3-content div */
+div.w3-content.w3-margin-top {
+    margin-top: 0; /* Poistaa ylämarginaalin */
+    margin-left: 0; /* Poistaa vasemman marginaalin */
+    margin-right: 10px; /* Poistaa oikean marginaalin */
+    width: 100%; /* Asettaa leveyden 100% */
+    padding: 0;
+    /* Huomaa, että et halunnut poistaa paddingia, mutta jos haluat, lisää 'padding: 0;' */
+}
+
+.w3-container.w3-card.w3-white.w3-margin-bottom.profil-container {
+    padding: 0; /* Poistaa paddingin */
+    margin-left: 0; /* Poistaa vasemman marginaalin */
+}
+
+
+
+.link-container a, p a {
     color: inherit;
     text-decoration: none;
-    transition: color 0.2s;
 }
 
-.link-container a:hover {
+.link-container:hover a, .link-container:hover p a, p:hover a {
     color: #009688;
 }
 
-/* Responsive breakpoints */
-@media screen and (max-width: 768px) {
-    .flex-container {
-        flex-direction: column;
-    }
-    
-    .flex-item {
-        width: 100%;
-    }
+.w3-content {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
 }
 
-@media screen and (max-width: 480px) {
+.w3-row-padding {
+    flex-grow: 1;
+    display: flex;
+    align-items: stretch;
+}
+
+.w3-third, .w3-twothird {
+    display: flex;
+    flex-direction: column;
+}
+
+.w3-white {
+    flex: 1;
+}
+
+footer.w3-container {
+    padding: 20px 0;
+}
+
+/* Profiiliosion tyyli */
+.profil-container {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.profil-container img {
+    width: 80px; /* Tässä määritellään kuvan leveys, muuta tarvittaessa */
+}
+
+
+/* Profiiliosion tyyli */
+.profil-container {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+}
+
+.profile-pic {
+    width: 80px; /* Tässä määritellään kuvan leveys, muuta tarvittaessa */
+    margin-right: 10px; /* Voit säätää tätä arvoa haluamaksesi tilaksi kuvan ja tekstin välille */
+}
+
+.profile-info {
+    flex-grow: 1; /* Ota jäljellä oleva tila käyttöön */
+    min-width: 0; /* Estä tekstielementin venyminen yli vanhemman leveyden */
+}
+
+/* Määritellään, miten elementit käyttäytyvät pienillä näytöillä */
+@media screen and (max-width: 400px) {
     .profil-container {
         flex-direction: column;
-        text-align: center;
+        align-items: flex-start;
     }
-    
+
     .profile-pic {
-        margin-bottom: 8px;
+        width: 30%; /* Aseta kuva täyttämään koko tila mobiilissa */
+        max-width: 80px; /* Määritä maksimileveys */
+        
     }
-    
-    .w3-content {
-        padding: 8px;
+
+    .profile-info {
+        width: 100%; /* Aseta teksti täyttämään koko tila mobiilissa */
     }
-}
-
-/* Progress bars */
-.w3-round-xlarge {
-    border-radius: 16px;
-    overflow: hidden;
-    margin: 8px 0;
-}
-
-.w3-light-grey {
-    background-color: #f1f1f1;
-}
-
-.w3-teal {
-    background-color: #009688;
 }

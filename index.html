@@ -1,21 +1,283 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Otto Suominen</title>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <script type="text/javascript">
-        function detectDevice() {
-            var isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
-            if (isMobile) {
-                window.location = 'mobile.html'; // Osoite mobiiliversiolle
-            } else {
-                window.location = 'desktop.html'; // Osoite tietokoneversiolle
-            }
-        }
-    </script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Otto Suominen</title>
+
+    <!-- Tyylit -->
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" type="text/css" href="style.css">
+
+    <!-- Favikoni -->
+    <link rel="icon" href="world image rounded fixed.png" type="image/png">
 </head>
-<body onload="detectDevice();">
-    <p>Tarkistetaan laitetta...</p>
+
+<body class="w3-light-grey">
+
+  <!-- Page Container, asetetaan maksimileveys mobiilinäytöille sopivaksi -->
+  <div class="w3-content w3-margin-top">
+    
+    <!-- The Grid, yhden sarakkeen asettelu -->
+    <div class="w3-row-padding">
+      <div class="w3-col m12">
+        
+        <!-- Profiiliosio -->
+        <div class="w3-container w3-card w3-white w3-margin-bottom profil-container">
+            <img src="ProfilePic.png" class="profile-pic" alt="Avatar">
+            <div class="profile-info">
+                <h5 class="w3-text-grey">
+                    <i class="material-icons w3-xxlarge w3-text-teal">person</i>
+                    Otto Suominen
+                </h5>
+                <h6 class="w3-text-grey">
+                    <b>Ylioppilas Ja Tulevaisuuden<br>Sähkötekniikan Ammattilainen</b>
+                </h6>
+            </div>
+        </div>
+
+        <div class="flex-container">
+          <!-- Vasen sarake: Koulutus ja Muut koulutukset -->
+          <div class="flex-item left">
+            <!-- Koulutus -->
+            <div class="w3-container w3-card w3-white w3-margin-bottom">
+                <h5 class="w3-text-grey">
+                    <i class="material-icons w3-xxlarge w3-text-teal">school</i>
+                    Koulutus
+                </h5>
+                <div class="w3-container">
+                    <h6 class="w3-opacity"><b>Sähkötekniikan kandidaatti ja diplomi-insinööri</b></h6>
+                    <p>
+                        <span class="w3-text-teal">
+                            <i class="material-icons w3-margin-right">date_range</i>
+                            Lut Yliopisto / Aug 2022 - <span class="w3-tag w3-teal w3-round">Nykyinen</span>
+                        </span>
+                        <span class="break-line">Sivuaine: Energiatalous</span>
+                        <span class="break-line">Pääaine: -</span>
+                    </p>
+                </div>
+              <div class="w3-container">
+                <h6 class="w3-text-grey"><b>Ylioppilas</b></h6>
+                <p class="w3-text-teal">
+                  <i class="material-icons w3-margin-right">date_range</i>
+                  Loimaan lukio / Aug 2018 - Jun 2021
+                </p>
+              </div>
+              <hr>
+        
+              <!-- Muut koulutukset -->
+              <h5 class="w3-text-grey">
+                <i class="material-icons w3-xxlarge w3-text-teal">badge</i>
+                Muut koulutukset
+            </h5>
+              <div class="w3-container">
+                <h6 class="w3-text-grey">Varusmiespalvelus</h6>
+                <p class="w3-text-teal">
+                  <i class="material-icons w3-margin-right">date_range</i>
+                  Porin Prikaati / Jan 2022 - Jun 2022
+                </p>
+                
+                <h6 class="w3-text-grey">Pelinohjaaja koulutus</h6>
+                <p class="w3-text-teal">
+                  <i class="material-icons w3-margin-right">date_range</i>
+                  Loimaan palloseura LOPS / May 2016
+                </p>
+                
+                <h6 class="w3-text-grey">Sähkötyöturvallisuuskortti (SFS6002)</h6>
+                <p class="w3-text-teal">
+                  <i class="material-icons w3-margin-right">date_range</i>
+                  May 2023
+                </p>
+                
+                <h6 class="w3-text-grey">SPR Hätäensiapukurssi</h6>
+                <p class="w3-text-teal">
+                  <i class="material-icons w3-margin-right">date_range</i>
+                  May 2023
+                </p>
+              </div>
+            </div>
+          </div>
+        
+          <!-- Oikea sarake: Profiili ja osaaminen -->
+          <div class="flex-item right">
+            <div class="w3-container w3-card w3-white w3-margin-bottom">
+                <h5 class="w3-text-grey">
+                    <i class="material-icons w3-xxlarge w3-text-teal">engineering</i>
+                    Profiili
+                </h5>
+              
+                <p>Olen ylioppilas ja tulevaisuuden sähkötekniikan DI. Minulla on kokemusta eri sähkönsiirron työtehtävistä, tekniikan alojen kokoonpano-työskentelystä ja suunnittelusta.</p>
+                <hr>
+                <h5 class="w3-text-grey">
+                    <i class="material-icons w3-xxlarge w3-text-teal">settings</i>
+                    Koulutus
+                </h5>
+                <ul class="w3-small">
+                  <li><b>Sähkötekniikka</b></li>
+                  <li><b>Energiatalous</b></li>
+                  <li><b>Trimble</b></li>
+                  <li><b>Aidon</b></li>
+                  <li><b>Landis+Gyr</b></li>
+                  <li><b>Rajapinta työskentely</b></li>
+                </ul>
+                <hr>
+                <h5 class="w3-text-grey">
+                    <i class="material-icons w3-large w3-text-teal">language</i>
+                    Kielitaito
+                </h5>
+                <p>Suomi</p>
+                <div class="w3-light-grey w3-round-xlarge">
+                  <div class="w3-round-xlarge w3-teal" style="height:12px;width:100%"></div>
+                </div>
+                <p>Englanti</p>
+                <div class="w3-light-grey w3-round-xlarge">
+                  <div class="w3-round-xlarge w3-teal" style="height:12px;width:90%"></div>
+                </div>
+                <p>Ruotsi</p>
+                <div class="w3-light-grey w3-round-xlarge">
+                  <div class="w3-round-xlarge w3-teal" style="height:12px;width:35%"></div>
+                </div>
+              </div>
+          </div>
+        </div>     
+      
+
+      <!-- Työkokemus-->
+<div class="w3-container w3-card w3-white w3-margin-bottom">
+    <h5 class="w3-text-grey w3-padding-16">
+        <i class="material-icons w3-margin-right w3-xxlarge w3-text-teal">work</i>Työkokemus
+    </h5>
+    
+    <div class="w3-container">
+        <h5 class="w3-opacity"><b>Harjoittelija / Sallilan Sähkönsiirto Oy</b></h5>
+        <p class="w3-text-teal">
+            <i class="material-icons w3-margin-right">date_range</i>
+            Apr 2023 - <span class="w3-tag w3-teal w3-round">Nykyinen</span>
+        </p>
+        <p>Sallilan Sähkönsiirto Oy:llä toimin kesän ajan täysipäiväisesti ja jatkoin tuntityöntekijänä opintojeni ohella. Työtehtäviäni oli avustavat mittaroinnin ja sähkönsiirron tehtävät.
+           Päätehtäviäni oli työmääräinten teko ja niiden tilan valvominen. Tämä edellytti järjestelmien jatkuvaa seurantaa ja tapahtumien dokumentointia. 
+           Päivitin myös Sallilan radiosuunnitelman ulkoasun ja sisällön JavaScript-kielellä omaa työtä helpottaakseni. Lisäksi päivitin
+           verkkomallinnuksen tietoja GPS-paikannuksen avulla kerättyjen mittausten perusteella. Kartan päivitettyä tietokantaa hyödynnettiin yhteistyössä HeadPowerin
+           kanssa mittarinvaihtotyömääräinten tekoon automaation kautta. Radiosuunnitelman hahmotelman löydät alla olevasta linkistä.
+           Kohteita ja niiden sijainteja on muutettu turvallisuussyistä.
+        </p>
+        <p class="link-container">
+            <a href="Radiosuunnitelma.html" target="_blank" title="Avaa linkki uudessa ikkunassa" style="text-decoration: none;">
+                <i class="material-icons w3-margin-right">map</i>
+                <span class="w3-opacity link-text">Karttasovellus</span>
+                <i class="material-icons" style="font-size: 1em;">open_in_new</i>
+            </a>
+        </p>
+        <hr>
+    </div>
+
+    <div class="w3-container">
+        <h5 class="w3-opacity"><b>Tuntiopettaja</b></h5>
+        <p class="w3-text-teal">
+            <i class="material-icons w3-margin-right">date_range</i>
+            Lut Yliopisto / Jan 2023 - May 2023
+        </p>
+        <p>Toimin tuntiopettajana ABB-luokassa, missä järjestin räätälöityjä harjoituksia
+           ja esityksiä lukio- ja yläkoululaisille. Nämä oppitunnit kattoivat aiheita,
+           kuten sähkönkulutusta, erilaisia sähköntuotantoprosesseja sekä niiden vaikutuksia ilmastoon.
+           Lisäksi pidin tuulituotantorastia, missä opiskelijat pääsivät rakentamaan oman turbiininsa ja testaamaan sen toimintaa.
+        </p>
+        <hr>
+    </div>
+
+    <div class="w3-container">
+        <h5 class="w3-opacity"><b>Kokoonpanija</b></h5>
+        <p class="w3-text-teal">
+            <i class="material-icons w3-margin-right">date_range</i>
+            Vallox Oy / Jun 2022 - Aug 2022
+        </p>
+        <p class="w3-text-teal">
+            <i class="material-icons w3-margin-right">date_range</i>
+            Fenestra Oy / Aug 2021 - Dec 2021
+        </p>
+        <p class="w3-text-teal">
+            <i class="material-icons w3-margin-right">date_range</i>
+            Salko Painting Oy / Mar 2021 - Jul 2021
+        </p>
+        <p>Minulla on laaja kokemus erilaisista kokoonpanotöistä. Valloxilla opin ilmastointilaitteiden kokoonpanon eri vaiheista, kuten lämmitysvastusten kokoamisesta ja laitetestauksesta.
+           Fenestran Loimaan toimipisteessä perehdyin ikkunoiden tuotannon eri vaiheisiin, mukaan lukien ikkunanprofiilien työstö ja karmien kokoaminen.
+           Lisäksi minulla on kokemusta alumiiniprofiilien jauhemaalauksen eri työvaiheista Salko Painting Oy:ltä.
+        </p>
+        <hr>
+    </div>
+
+    <div class="w3-container">
+        <h5 class="w3-opacity"><b>Ulkoaluetyöntekijä</b></h5>
+        <p class="w3-text-teal">
+            <i class="material-icons w3-margin-right">date_range</i>
+            Suikkilan Lämpö Oy / 2017 - 2020
+        </p>
+        <p>Olen työskennellyt Suikkilan Lämpö Oy:ssä ulkoaluetyöntekijänä useamman kesän ajan.
+           Työtehtäväni sisälsivät monipuolisesti ulkoalueiden hoitotehtäviä sekä asiakaspalvelua.
+           Vastuullani oli oma huoltoalue, jonka sisällä vastasin asiakaspalvelusta,
+           ulkoalueiden siisteydestä, viheralueiden hoidosta, konetyöstä sekä työkoneiden huollosta.
+        </p>
+        <hr>
+    </div>
+
+    <div class="w3-container">
+        <h5 class="w3-opacity"><b>Kasvihuonetyöntekijä</b></h5>
+        <p class="w3-text-teal">
+            <i class="material-icons w3-margin-right">date_range</i>
+            Oksasen puutarha Oy / Jul 2017 & 2021
+        </p>
+        <p>Olen työskennellyt kasvihuonetyöntekijänä Oksasen Puutarha Oy:llä
+           kahtena kesänä ja avustin salaatin istutusprosessissa.
+        </p>
+        <hr>
+    </div>
+
+    <div class="w3-container info-links">
+        <h5 class="w3-opacity"><b>Infoa</b></h5>
+        
+        <!-- Linkit -->
+        <p class="w3-text-teal">
+            <i class="material-icons w3-margin-right">work</i>
+            <a href="https://sallilasahkonsiirto.fi/" target="_blank" title="Avaa linkki uudessa ikkunassa">
+                Sallila Sähkönsiirto Oy
+                <i class="material-icons w3-icon-sm">open_in_new</i>
+            </a>
+        </p>
+        
+        <p class="w3-text-teal">
+            <i class="material-icons w3-margin-right">school</i>
+            <a href="https://www.lut.fi/en" target="_blank" title="Avaa linkki uudessa ikkunassa">
+                Lut Yliopisto
+                <i class="material-icons w3-icon-sm">open_in_new</i>
+            </a>
+        </p>
+        
+        <!-- Ei-linkitetyt tiedot -->
+        <p class="w3-text-teal">
+            <i class="material-icons w3-margin-right">email</i>
+            ottosuominen@icloud.com
+        </p>
+        
+        <p class="w3-text-teal">
+            <i class="material-icons w3-margin-right">phone</i>
+            0442688862
+        </p>
+    </div>    
+</div>
+
+        
+
+      
+    
+    
+    
+
+      </div> <!-- End Single Column -->
+      
+      </div> <!-- End Grid -->
+  </div> <!-- End Page Container -->
+
 </body>
 </html>

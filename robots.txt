@@ -2,11 +2,6 @@
 User-agent: *
 Allow: /
 
-# GitHub Pages -sivuston epäolennaiset osiot
-User-agent: *
-Disallow: /search/
-Disallow: /*q=
-
 # Hakukoneille erityisohjeita
 User-agent: baidu
 Crawl-delay: 10

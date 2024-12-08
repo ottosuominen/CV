@@ -3,6 +3,7 @@ User-agent: *
 Allow: /
 
 # GitHub Pages -sivuston epäolennaiset osiot
+User-agent: *
 Disallow: /search/
 Disallow: /*q=
 

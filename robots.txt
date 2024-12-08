@@ -2,8 +2,8 @@
 User-agent: *
 Allow: /
 
-# Hakukoneille erityisohjeita
-User-agent: baidu
+# Baidun erityisasetukset
+User-agent: Baiduspider
 Crawl-delay: 10
 
 # Sivustokartta

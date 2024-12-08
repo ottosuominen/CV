@@ -1,0 +1,14 @@
+# Yleiset ohjeet kaikille hakukoneille
+User-agent: *
+Allow: /
+
+# GitHub Pages -sivuston epäolennaiset osiot
+Disallow: /search/
+Disallow: /*q=
+
+# Hakukoneille erityisohjeita
+User-agent: baidu
+Crawl-delay: 10
+
+# Sivustokartta
+Sitemap: https://ottosuominen.github.io/CV/sitemap.xml

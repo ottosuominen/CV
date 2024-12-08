@@ -265,6 +265,14 @@ footer.w3-container {
     color: #009688; /* Ikonit pysyvät vihreinä */
 }
 
+.w3-text-teal p {
+    color: #009688; /* Varmistaa teal-värin */
+    margin: 0; /* Poistaa oletusmarginaalit */
+    padding: 0; /* Poistaa oletuspaddingin */
+    display: flex; /* Keskittää ikonin ja tekstin samalle linjalle */
+    align-items: center; /* Keskittää pystysuunnassa */
+}
+
 .flex-container {
     display: flex;
     justify-content: space-between;
@@ -420,6 +428,17 @@ ul.w3-small li {
         display: inline-block; /* Varmistaa, että elementti käyttäytyy kuin teksti */
         vertical-align: middle; /* Keskittää "Nykyinen"-tunnisteen tekstin kanssa */
         margin-left: 4px; /* Lisää tilaa "Nykyinen"-tunnisteen ja tekstin väliin */
+    }
+
+    .w3-text-teal p {
+        color: #009688 !important; /* Ylittää mahdolliset ristiriitaiset tyylit */
+        display: flex; /* Asettaa ikonit ja tekstin riville */
+        align-items: center; /* Keskittää pystysuunnassa */
+        font-size: 14px; /* Pienempi fonttikoko mobiilissa */
+    }
+
+    .w3-text-teal p i {
+        margin-right: 8px; /* Lisää väliä ikonille ja tekstille */
     }
 }
 

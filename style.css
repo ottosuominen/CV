@@ -28,7 +28,6 @@ div.w3-content.w3-margin-top {
     margin: auto; /* Keskitä sisältö */
     width: 100%; /* Asettaa leveyden 100% */
     padding: 0;
-    /* Huomaa, että et halunnut poistaa paddingia, mutta jos haluat, lisää 'padding: 0;' */
 }
 
 .link-container a:hover {
@@ -196,7 +195,7 @@ footer.w3-container {
 }
 
 .profil-container img {
-    width: 80px; /* Tässä määritellään kuvan leveys, muuta tarvittaessa */
+    width: 80px; /* Tässä määritellään kuvan leveys */
 }
 
 
@@ -209,7 +208,7 @@ footer.w3-container {
 }
 
 .profile-pic {
-    width: 80px; /* Tässä määritellään kuvan leveys, muuta tarvittaessa */
+    width: 80px; /* Tässä määritellään kuvan leveys */
     margin-right: 10px; /* Voit säätää tätä arvoa haluamaksesi tilaksi kuvan ja tekstin välille */
 }
 

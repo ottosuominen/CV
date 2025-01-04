@@ -7,6 +7,13 @@
     <priority>1.0</priority>
   </url>
 
+  <!-- Projektit -->
+  <url>
+    <loc>https://ottosuominen.github.io/CV/projects.html</loc>
+    <lastmod>2024-12-08</lastmod>
+    <priority>1</priority>
+  </url>
+
   <!-- Favikoni -->
   <url>
     <loc>https://ottosuominen.github.io/CV/favicon.ico</loc>

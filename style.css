@@ -1,5 +1,52 @@
+/* Navigointipalkki yleinen tyyli */
+#navbar {
+    display: flex; /* Käytetään joustavaa layouttia */
+    justify-content: center; /* Keskitetään linkit vaakasuunnassa */
+    align-items: center; /* Keskitetään linkit pystysuunnassa */
+    padding: 10px; /* Lisätään hieman tilaa ylä- ja alareunaan */
+}
+
+/* Linkkien perusasetukset */
+#navbar a {
+    text-decoration: none; /* Ei alleviivauksia */
+    color: #000; /* Tekstin väri musta */
+    margin: 0 10px; /* Lisää vaakasuoraa tilaa linkkien väliin */
+    padding: 5px 15px; /* Lisää sisäistä tyhjää linkkien ympärille */
+    display: inline-block; /* Varataan tilaa linkkien ympärille */
+    transition: all 0.3s ease-in-out; /* Sulava siirtymä hover-efektille */
+}
+
+/* Kun linkki on aktiivinen (nykyinen sivu) */
+#navbar a.active {
+    background-color: #009688; /* korostusväri */
+    border-radius: 17px; /* Pyöristetyt kulmat */
+    color: #000; /* Tekstin väri musta */
+}
+
+/* Hover-efekti linkeille */
+#navbar a:hover {
+    background-color: #00ffe5; /* korostusväri */
+    color: #000; /* Tekstin väri musta */
+    border-radius: 10px; /* Hieman pyöristetyt kulmat */
+    transform: scale(1.1); /* Hieman suurempi koko hoverissa */
+}
+
+/* Flex-kontti */
+.flex-container {
+  display: flex;
+  flex-wrap: wrap; /* varmistaa joustavuuden pienemmillä näytöillä */
+  gap: 1rem;       /* pientä väliä sarakkeiden välille */
+}
+
+/* Vasen ja oikea sarake */
+.flex-item {
+  flex: 1; /* jaetaan kahteen yhtä leveään sarakkeeseen */
+  min-width: 260px; /* halutessasi voit määrittää minimi-leveyden */
+}
+
 html, body, h1, h2, h3, h4, h5, h6 {
     font-family: "Roboto", sans-serif;
+    overflow: auto; /* näyttää skrollipalkin vain, jos sisältö ei mahdu */
 }
 
 a {
@@ -10,6 +57,10 @@ a {
     text-align: justify;
     text-justify: inter-word;
 }
+
+.text-black {
+    color: #000 !important;
+  }
 
 .break-line {
     display: block; /* Asetetaan jokainen osa omalle riville */
@@ -28,6 +79,7 @@ div.w3-content.w3-margin-top {
     margin: auto; /* Keskitä sisältö */
     width: 100%; /* Asettaa leveyden 100% */
     padding: 0;
+    /* Huomaa, että et halunnut poistaa paddingia, mutta jos haluat, lisää 'padding: 0;' */
 }
 
 .link-container a:hover {
@@ -160,7 +212,7 @@ div.w3-content.w3-margin-top {
     margin: auto; /* Keskitä sisältö */
     display: flex;
     flex-direction: column;
-    min-height: 100vh;
+    min-height: auto;
 }
 
 .w3-container i.material-icons {
@@ -195,7 +247,7 @@ footer.w3-container {
 }
 
 .profil-container img {
-    width: 80px; /* Tässä määritellään kuvan leveys */
+    width: 80px; /* Tässä määritellään kuvan leveys, muuta tarvittaessa */
 }
 
 
@@ -208,8 +260,10 @@ footer.w3-container {
 }
 
 .profile-pic {
-    width: 80px; /* Tässä määritellään kuvan leveys */
-    margin-right: 10px; /* Voit säätää tätä arvoa haluamaksesi tilaksi kuvan ja tekstin välille */
+    width: 100%; /* Skaalautuu käytettävissä olevaan tilaan */
+    max-width: 80px; /* Kuvan maksimileveys */
+    height: auto; /* Säilyttää kuvasuhteen */
+    margin-right: 10px;
 }
 
 .profile-info {

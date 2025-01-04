@@ -2,7 +2,6 @@
 <html lang="fi">
 <head>
     <meta charset="UTF-8">
-    <meta name="google-site-verification" content="uuW3flw-T-m_heOoVghAzGo0Gd1B-5K8pMfeoofik28" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <meta name="format-detection" content="telephone=no">
     <meta name="description" content="Otto Suominen - Ylioppilas ja tulevaisuuden sähkötekniikan ammattilainen. Tutustu koulutukseeni, työkokemukseeni ja osaamiseeni.">
@@ -21,6 +20,12 @@
 </head>
 
 <body class="w3-light-grey">
+
+  <!-- Navbar heti body-tagin alussa -->
+  <div id="navbar">
+    <a href="index.html">Portfolio</a>
+    <a href="projects.html">Projektit</a>
+  </div>
 
   <!-- Page Container, asetetaan maksimileveys mobiilinäytöille sopivaksi -->
   <div class="w3-content w3-margin-top">
@@ -58,10 +63,13 @@
                 <div class="w3-container">
                     <h6 class="w3-opacity"><b>Sähkötekniikan kandidaatti ja diplomi-insinööri</b></h6>
                     <p>
-                        <span class="w3-text-teal">
-                            <i class="material-icons w3-margin-right">date_range</i>
-                            Lut Yliopisto / Aug 2022 - <span class="w3-tag w3-teal w3-round">Nykyinen</span>
+                      <span class="w3-text-teal">
+                        <i class="material-icons w3-margin-right">date_range</i>
+                        Lut Yliopisto / Aug 2022 -
+                        <span class="w3-tag w3-teal w3-round text-black">
+                          Nykyinen
                         </span>
+                      </span>
                         <span class="break-line">Sivuaine: Energiatalous</span>
                         <span class="break-line">Pääaine: -</span>
                     </p>
@@ -81,6 +89,17 @@
                 Muut koulutukset
             </h5>
               <div class="w3-container">
+                <h6 class="w3-text-grey">Varusmiespalvelus</h6>
+                <p class="w3-text-teal">
+                  <i class="material-icons w3-margin-right">date_range</i>
+                  Porin Prikaati / Jan 2022 - Jun 2022
+                </p>
+                
+                <h6 class="w3-text-grey">Pelinohjaaja koulutus</h6>
+                <p class="w3-text-teal">
+                  <i class="material-icons w3-margin-right">date_range</i>
+                  Loimaan palloseura LOPS / May 2016
+                </p>
                 
                 <h6 class="w3-text-grey">Sähkötyöturvallisuuskortti (SFS6002)</h6>
                 <p class="w3-text-teal">
@@ -92,18 +111,6 @@
                 <p class="w3-text-teal">
                   <i class="material-icons w3-margin-right">date_range</i>
                   May 2023
-                </p>
-
-                  <h6 class="w3-text-grey">Varusmiespalvelus</h6>
-                <p class="w3-text-teal">
-                  <i class="material-icons w3-margin-right">date_range</i>
-                  Porin Prikaati / Jan 2022 - Jun 2022
-                </p>
-                
-                <h6 class="w3-text-grey">Pelinohjaaja koulutus</h6>
-                <p class="w3-text-teal">
-                  <i class="material-icons w3-margin-right">date_range</i>
-                  Loimaan palloseura LOPS / May 2016
                 </p>
               </div>
             </div>
@@ -121,7 +128,7 @@
                 <hr>
                 <h5 class="w3-text-grey">
                     <i class="material-icons w3-xxlarge w3-text-teal">settings</i>
-                    Tietotaito
+                    Koulutus
                 </h5>
                 <ul class="w3-small">
                   <li><b>Sähkötekniikka</b></li>
@@ -162,8 +169,8 @@
     <div class="w3-container">
         <h5 class="w3-opacity"><b>Harjoittelija / Sallilan Sähkönsiirto Oy</b></h5>
         <p class="w3-text-teal">
-            <i class="material-icons w3-margin-right">date_range</i>
-            Apr 2023 - <span class="w3-tag w3-teal w3-round">Nykyinen</span>
+          <i class="material-icons w3-margin-right">date_range</i>
+          Apr 2023 - <span class="w3-tag w3-teal w3-round text-black">Nykyinen</span>
         </p>
         <p>Sallilan Sähkönsiirto Oy:llä toimin kesän ajan täysipäiväisesti ja jatkoin tuntityöntekijänä opintojeni ohella. Työtehtäviäni oli avustavat mittaroinnin ja sähkönsiirron tehtävät.
            Päätehtäviäni oli työmääräinten teko ja niiden tilan valvominen. Tämä edellytti järjestelmien jatkuvaa seurantaa ja tapahtumien dokumentointia. 
@@ -276,13 +283,29 @@
     </div>    
 </div>
 
-        
-
       </div> <!-- End Single Column -->
       
       </div> <!-- End Grid -->
   </div> <!-- End Page Container -->
 
+  <!-- JavaScript-skripti, joka lisää ".active"-luokan -->
+  <script>
+    (function() {
+      // Hae nykyinen sivunimi polusta, esim. "index.html" tai "projects.html"
+      const currentPage = window.location.pathname.split("/").pop();
+
+      // Etsitään kaikki #navbar -linkit
+      const links = document.querySelectorAll('#navbar a');
+
+      // Käydään linkit läpi ja verrataan href-attribuuttia currentPageen
+      links.forEach(link => {
+        if (link.getAttribute('href') === currentPage) {
+          // Lisätään tälle linkille .active -luokka
+          link.classList.add('active');
+        }
+      });
+    })();
+  </script>
 
 </body>
 </html>

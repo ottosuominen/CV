@@ -366,6 +366,11 @@ ul.w3-small li {
     display: none !important;
   }
 
+body {
+    transform: scale(0.8); /* Skaalaa sisällön automaattisesti */
+    transform-origin: top left;
+  }
+
 @page {
     margin: 0;
     size: auto; /* Määrittää tulostusalueen koon automaattisesti */

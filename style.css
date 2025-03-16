@@ -367,11 +367,6 @@ ul.w3-small li {
     display: none !important;
   }
 
-/* Poistaa kaikki varjot ja reunukset */
-  * {
-    box-shadow: transparent !important; /* Poistaa laatikkovarjot */
-  }
-
 @page {
     margin: 0;
     size: auto; /* Määrittää tulostusalueen koon automaattisesti */

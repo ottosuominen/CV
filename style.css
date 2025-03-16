@@ -367,7 +367,7 @@ ul.w3-small li {
   }
 
 body {
-    transform: scale(0.8); /* Skaalaa sisällön automaattisesti */
+    transform: scale(0.1); /* Skaalaa sisällön automaattisesti */
     transform-origin: top left;
   }
 

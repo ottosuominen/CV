@@ -367,7 +367,7 @@ ul.w3-small li {
   }
 
 body {
-    zoom: 0.7; /* Skaalaa koko sisällön 70 % kokoon */
+    zoom: 2; /* Skaalaa koko sisällön 70 % kokoon */
   }
 
 @page {

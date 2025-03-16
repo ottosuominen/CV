@@ -368,8 +368,21 @@ ul.w3-small li {
     box-shadow: none !important; /* Poistaa kaikki laatikkovarjot */
     text-shadow: none !important; /* Poistaa kaikki tekstivarjot */
   }
-    
-/* Poistaa reunukset erityisesti w3-card ja w3-container -luokista */
+
+  @page {
+    margin: 0;
+    size: auto; /* Määrittää tulostusalueen koon automaattisesti */
+  }
+
+  /* Poistaa reunukset, varjot ja taustavärit kaikista elementeistä */
+  * {
+    box-shadow: none !important;
+    text-shadow: none !important;
+    background-color: transparent !important;
+    color: #000 !important; /* Varmistaa mustan tekstin */
+  }
+
+  /* Poistaa reunukset ja taustavärit w3-card ja w3-container -luokista */
   .w3-card, .w3-container, .w3-white, .w3-margin-bottom {
     border: none !important;
     box-shadow: none !important;
@@ -378,9 +391,57 @@ ul.w3-small li {
     margin: 0 !important;
   }
 
-@page {
-    margin: 0;
-    size: auto; /* Määrittää tulostusalueen koon automaattisesti */
+  /* Poistaa ylimääräisen paddingin ja marginaalin flex-elementeistä */
+  .flex-container, .flex-item, .profil-container {
+    padding: 0 !important;
+    margin: 0 !important;
+  }
+
+  /* Varmistaa, että kielitaito-osion palkit näkyvät oikein */
+  .w3-round-xlarge {
+    height: 12px !important;
+    background-color: #ccc !important; /* Vaalea harmaa tausta */
+  }
+
+  .w3-teal {
+    background-color: #000 !important; /* Musta täyttö tulostuksessa */
+  }
+
+  /* Poistaa kaikki linkkien alleviivaukset */
+  a {
+    text-decoration: none !important;
+  }
+
+  /* Varmistaa, että ikonit eivät aiheuta ongelmia */
+  .material-icons {
+    color: #000 !important; /* Musta väri ikoneille */
+  }
+
+  /* Poistaa ylimääräisen tilan listoista */
+  ul, ol {
+    padding-left: 20px !important; /* Säilyttää listojen sisennys */
+    margin: 0 !important;
+  }
+
+  /* Varmistaa, että kuvat eivät aiheuta ongelmia */
+  img {
+    max-width: 100% !important;
+    height: auto !important;
+  }
+
+  /* Lisätyylit oikean sarakkeen harmaan reunuksen poistamiseksi */
+  .flex-item.right {
+    border: none !important;
+    box-shadow: none !important;
+    background-color: transparent !important;
+    padding: 0 !important;
+    margin: 0 !important;
+  }
+
+  /* Varmistaa, että oikean sarakkeen sisältö ei ylitä reunaa */
+  .flex-item.right .w3-container {
+    padding: 0 !important;
+    margin: 0 !important;
   }
 }
 

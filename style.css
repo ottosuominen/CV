@@ -366,10 +366,6 @@ ul.w3-small li {
     display: none !important;
   }
 
-body {
-    zoom: 2.4; /* Skaalaa koko sisällön 70 % kokoon */
-  }
-
 @page {
     margin: 0;
     size: auto; /* Määrittää tulostusalueen koon automaattisesti */

@@ -374,18 +374,16 @@ ul.w3-small li {
     size: auto; /* Määrittää tulostusalueen koon automaattisesti */
   }
 
-  /* Poistaa reunukset, varjot ja taustavärit kaikista elementeistä */
+  /* Poistaa reunukset ja varjot kaikista elementeistä */
   * {
     box-shadow: none !important;
     text-shadow: none !important;
-    background-color: transparent !important;
   }
 
-  /* Poistaa reunukset ja taustavärit w3-card ja w3-container -luokista */
+  /* Poistaa reunukset ja varjot w3-card ja w3-container -luokista */
   .w3-card, .w3-container, .w3-white, .w3-margin-bottom {
     border: none !important;
     box-shadow: none !important;
-    background-color: transparent !important;
     padding: 0 !important;
     margin: 0 !important;
   }
@@ -400,6 +398,10 @@ ul.w3-small li {
   .w3-round-xlarge {
     height: 12px !important;
     background-color: #ccc !important; /* Vaalea harmaa tausta */
+  }
+
+  .w3-teal {
+    background-color: #009688 !important; /* Säilytetään teal-väri */
   }
 
   /* Poistaa kaikki linkkien alleviivaukset */
@@ -423,7 +425,6 @@ ul.w3-small li {
   .flex-item.right {
     border: none !important;
     box-shadow: none !important;
-    background-color: transparent !important;
     padding: 0 !important;
     margin: 0 !important;
   }

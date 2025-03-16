@@ -365,6 +365,8 @@ ul.w3-small li {
   /* Piilottaa kaikki otsikot ja URL-osoitteet tulostuksessa */
   head, footer {
     display: none !important;
+    box-shadow: none !important; /* Poistaa kaikki laatikkovarjot */
+    text-shadow: none !important; /* Poistaa kaikki tekstivarjot */
   }
 
 @page {

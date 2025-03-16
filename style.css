@@ -16,13 +16,6 @@
     transition: all 0.3s ease-in-out; /* Sulava siirtymä hover-efektille */
 }
 
-/* Kun linkki on aktiivinen (nykyinen sivu) */
-#navbar a.active {
-    background-color: #009688; /* korostusväri */
-    border-radius: 17px; /* Pyöristetyt kulmat */
-    color: #000; /* Tekstin väri musta */
-}
-
 /* Hover-efekti linkeille */
 #navbar a:hover {
     background-color: #00ffe5; /* korostusväri */

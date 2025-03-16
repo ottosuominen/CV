@@ -367,8 +367,8 @@ ul.w3-small li {
   }
 
 @page {
-    margin: 0;
-    size: auto; /* Määrittää tulostusalueen koon automaattisesti */
+    size: 210mm auto; /* A4:n leveys, mutta loputon korkeus */
+    margin: 10mm;
   }
 }
 /* Mobiiliresponsiiviset tyylit */

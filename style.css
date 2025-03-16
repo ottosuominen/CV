@@ -341,7 +341,6 @@ footer.w3-container {
     flex-direction: column; /* Sisällöt pysyvät pystysuunnassa */
     justify-content: flex-start; /* Tasataan sisältö alkuun pystysuunnassa */
     padding: 15px; /* Sisätila korteille */
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Selkeä ulkonäkö */
     margin: 0; /* Ei ulkoista marginaalia */
     background-color: white; /* Yhtenäinen tausta */
 }

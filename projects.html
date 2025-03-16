@@ -137,24 +137,7 @@
     </div> <!-- End Grid (w3-row-padding) -->
   </div> <!-- End Page Container (w3-content) -->
 
-  <!-- JavaScript-skripti, joka lisää ".active"-luokan -->
-  <script>
-    (function() {
-      // Hae nykyinen sivunimi polusta, esim. "index.html" tai "projects.html"
-      const currentPage = window.location.pathname.split("/").pop();
-
-      // Etsitään kaikki #navbar -linkit
-      const links = document.querySelectorAll('#navbar a');
-
-      // Käydään linkit läpi ja verrataan href-attribuuttia currentPageen
-      links.forEach(link => {
-        if (link.getAttribute('href') === currentPage) {
-          // Lisätään tälle linkille .active -luokka
-          link.classList.add('active');
-        }
-      });
-    })();
-  </script>
+  
 
 </body>
 </html>

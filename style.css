@@ -377,12 +377,6 @@ ul.w3-small li {
     border: none !important;
     box-shadow: none !important;
   }
-    
- /* Poistaa ylimääräisen paddingin ja marginaalin flex-elementeistä */
-  .flex-container, .flex-item, .profil-container {
-    padding: 0 !important; /* Poistaa sisäisen tilan */
-    margin: 0 !important; /* Poistaa ulkoisen tilan */
-  }
 
 @page {
     margin: 0;

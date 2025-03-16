@@ -369,7 +369,7 @@ ul.w3-small li {
 
 /* Poistaa kaikki varjot ja reunukset */
   * {
-    box-shadow: none !important; /* Poistaa laatikkovarjot */
+    box-shadow: transparent !important; /* Poistaa laatikkovarjot */
   }
 
 @page {

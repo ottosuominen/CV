@@ -365,77 +365,31 @@ ul.w3-small li {
   /* Piilottaa kaikki otsikot ja URL-osoitteet tulostuksessa */
   head, footer {
     display: none !important;
-    box-shadow: none !important; /* Poistaa kaikki laatikkovarjot */
-    text-shadow: none !important; /* Poistaa kaikki tekstivarjot */
   }
 
-  @page {
-    margin: 0;
-    size: auto; /* Määrittää tulostusalueen koon automaattisesti */
-  }
-
-  /* Poistaa reunukset ja varjot kaikista elementeistä */
+/* Poistaa kaikki varjot ja reunukset */
   * {
-    box-shadow: none !important;
-    text-shadow: none !important;
+    box-shadow: none !important; /* Poistaa laatikkovarjot */
+    text-shadow: none !important; /* Poistaa tekstivarjot */
   }
 
-  /* Poistaa reunukset ja varjot w3-card ja w3-container -luokista */
-  .w3-card, .w3-container, .w3-white, .w3-margin-bottom {
-    border: none !important;
-    box-shadow: none !important;
-    padding: 0 !important;
-    margin: 0 !important;
-  }
-
-  /* Poistaa ylimääräisen paddingin ja marginaalin flex-elementeistä */
-  .flex-container, .flex-item, .profil-container {
-    padding: 0 !important;
-    margin: 0 !important;
-  }
-
-  /* Varmistaa, että kielitaito-osion palkit näkyvät oikein */
-  .w3-round-xlarge {
-    height: 12px !important;
-    background-color: #ccc !important; /* Vaalea harmaa tausta */
-  }
-
-  .w3-teal {
-    background-color: #009688 !important; /* Säilytetään teal-väri */
-  }
-
-  /* Poistaa kaikki linkkien alleviivaukset */
-  a {
-    text-decoration: none !important;
-  }
-
-  /* Poistaa ylimääräisen tilan listoista */
-  ul, ol {
-    padding-left: 20px !important; /* Säilyttää listojen sisennys */
-    margin: 0 !important;
-  }
-
-  /* Varmistaa, että kuvat eivät aiheuta ongelmia */
-  img {
-    max-width: 100% !important;
-    height: auto !important;
-  }
-
-  /* Lisätyylit oikean sarakkeen harmaan reunuksen poistamiseksi */
+ /* Lisätyylit oikean sarakkeen harmaan reunuksen poistamiseksi */
   .flex-item.right {
     border: none !important;
     box-shadow: none !important;
-    padding: 0 !important;
-    margin: 0 !important;
+  }
+    
+ /* Poistaa ylimääräisen paddingin ja marginaalin flex-elementeistä */
+  .flex-container, .flex-item, .profil-container {
+    padding: 0 !important; /* Poistaa sisäisen tilan */
+    margin: 0 !important; /* Poistaa ulkoisen tilan */
   }
 
-  /* Varmistaa, että oikean sarakkeen sisältö ei ylitä reunaa */
-  .flex-item.right .w3-container {
-    padding: 0 !important;
-    margin: 0 !important;
+@page {
+    margin: 0;
+    size: auto; /* Määrittää tulostusalueen koon automaattisesti */
   }
 }
-
 /* Mobiiliresponsiiviset tyylit */
 @media screen and (max-width: 768px) {
     /* Flex container muuttuu pystysuuntaiseksi */

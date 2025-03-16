@@ -372,12 +372,6 @@ ul.w3-small li {
     box-shadow: none !important; /* Poistaa laatikkovarjot */
   }
 
- /* Lisätyylit oikean sarakkeen harmaan reunuksen poistamiseksi */
-  .flex-item.right {
-    border: none !important;
-    box-shadow: none !important;
-  }
-
 @page {
     margin: 0;
     size: auto; /* Määrittää tulostusalueen koon automaattisesti */

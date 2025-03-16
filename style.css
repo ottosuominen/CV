@@ -370,7 +370,6 @@ ul.w3-small li {
 /* Poistaa kaikki varjot ja reunukset */
   * {
     box-shadow: none !important; /* Poistaa laatikkovarjot */
-    text-shadow: none !important; /* Poistaa tekstivarjot */
   }
 
  /* Lisätyylit oikean sarakkeen harmaan reunuksen poistamiseksi */

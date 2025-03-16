@@ -368,6 +368,15 @@ ul.w3-small li {
     box-shadow: none !important; /* Poistaa kaikki laatikkovarjot */
     text-shadow: none !important; /* Poistaa kaikki tekstivarjot */
   }
+    
+/* Poistaa reunukset erityisesti w3-card ja w3-container -luokista */
+  .w3-card, .w3-container, .w3-white, .w3-margin-bottom {
+    border: none !important;
+    box-shadow: none !important;
+    background-color: transparent !important;
+    padding: 0 !important;
+    margin: 0 !important;
+  }
 
 @page {
     margin: 0;

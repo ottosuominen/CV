@@ -9,7 +9,6 @@
 
     <!-- Tyylit -->
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
     <link rel="canonical" href="https://ottosuominen.github.io/CV/">
     <link rel="stylesheet" type="text/css" href="style.css">
@@ -22,9 +21,15 @@
 
   <!-- Navbar heti body-tagin alussa -->
   <div id="navbar">
-    <a href="index.html">Portfolio</a>
+    <a href="index.html">Koti</a>
+    <a href="portfolio.html">Portfolio</a>
     <a href="projects.html">Projektit</a>
   </div>
+
+  <div id="toast" class="toast">
+        <span>✅</span>
+        <span>Sähköposti/numero kopioitu!</span>
+    </div>
 
   <!-- Page Container, asetetaan maksimileveys mobiilinäytöille sopivaksi -->
   <div class="w3-content w3-margin-top">
@@ -45,7 +50,7 @@
               Otto Suominen
             </h5>
             <h6 class="w3-text-grey">
-              <b>TkK ja tulevaisuuden <br> sähkötekniikan ammattilainen</b>
+              <b>TkK ja Tulevaisuuden<br>Sähkötekniikan Ammattilainen</b>
             </h6>
           </div>
         </div>
@@ -58,9 +63,9 @@
           </h5>
           <div class="w3-container">
             <p> Tämä verkkosivu on omatekoista käsialaani ja rakennettu hyödyntäen
-                 <strong>HTML5</strong>, <strong>CSS3</strong> sekä <strong>JavaScript</strong>-kieliä.
+                 HTML5, CSS3 sekä JavaScript -kieliä.
                   Suunnittelussa painotin yksinkertaisuutta, responsiivisuutta ja helppokäyttöisyyttä.
-                   Sivusto hyödyntää mm. <strong>W3CSS</strong>-tyylikirjastoa, joka tekee rakenteiden ja visuaalisten
+                   Sivusto hyödyntää mm. W3CSS -tyylikirjastoa, joka tekee rakenteiden ja visuaalisten
                     elementtien hallinnasta joustavampaa. Kehitän ja päivitän sivuani uusien ideoiden 
                     ja oppien myötä, tavoitteenani luoda toimiva ja visuaalisesti hyvä kokonaisuus. </p>
           </div>
@@ -79,8 +84,8 @@
               <div class="w3-container">
                 <p>
                   Loin Sallilalla töissä ollessani paikallisen, HTML-pohjaisen version 
-                  <strong>radiosuunnitelmasta</strong>, sillä alkuperäinen versio
-                  oli aika hitaehko, eikä sen ulkoasu täyttänyt käyttötarpeitamme. Lisäsin radiosuunnitelmaan Google Street View lisäosan
+                  radiosuunnitelmasta, sillä alkuperäinen versio
+                  oli hitaehko, eikä sen ulkoasu täyttänyt käyttötarpeitamme. Lisäsin radiosuunnitelmaan Google Street View lisäosan
                   sekä enemmän karttavaihtoehtoja. 
                 </p>
 
@@ -90,9 +95,7 @@
                 </p>
 
                 <p>
-                  <a href="Radiosuunnitelma.html" target="_blank" class="w3-text-teal">
-                    Avaa radiosuunnitelma
-                  </a>
+                  <a href="Radiosuunnitelma.html" class="card-link">Avaa radiosuunnitelma</a>
                 </p>
               </div>
             </div>
@@ -124,9 +127,7 @@
                         jotta hakukoneiden indeksointi voitiin synkronoida halutulle päivämäärälle.
                 </p>
                 <p>
-                  <a href="https://commaconnects.com" target="_blank" class="w3-text-teal">
-                    Avaa sivusto
-                  </a>
+                  <a href="https://commaconnects.com" class="card-link">Avaa sivusto</a>
                 </p>
               </div>
             </div>
@@ -136,6 +137,63 @@
       </div> <!-- End Single Column (m12) -->
     </div> <!-- End Grid (w3-row-padding) -->
   </div> <!-- End Page Container (w3-content) -->
+  
+
+  <!-- Contact Section -->
+    <section class="contact-section">
+        <div class="section">
+            <h2 class="section-title">Ollaan yhteyksissä</h2>
+            <div class="contact-links">
+                <a href="#" onclick="copyEmail(event)" class="contact-link">📧 Sähköposti</a>
+                <a href="#" onclick="copyPhone(event)" class="contact-link">📱 Puhelin</a>
+                <a href="https://www.linkedin.com/in/otto-suominen-9b357b312/" class="contact-link">💼 LinkedIn</a>
+            </div>
+        </div>
+    </section>
+
+  <!-- JavaScript-skripti, joka lisää ".active"-luokan -->
+  <script>
+    (function() {
+      // Hae nykyinen sivunimi polusta, esim. "index.html" tai "projects.html"
+      const currentPage = window.location.pathname.split("/").pop();
+
+      // Etsitään kaikki #navbar -linkit
+      const links = document.querySelectorAll('#navbar a');
+
+      // Käydään linkit läpi ja verrataan href-attribuuttia currentPageen
+      links.forEach(link => {
+        if (link.getAttribute('href') === currentPage) {
+          // Lisätään tälle linkille .active -luokka
+          link.classList.add('active');
+        }
+      });
+    })();
+
+
+    function copyEmail(event) {
+            event.preventDefault();
+            navigator.clipboard.writeText('ottosuominen@icloud.com');
+            
+            const toast = document.getElementById('toast');
+            toast.classList.add('show');
+            
+            setTimeout(() => {
+                toast.classList.remove('show');
+            }, 3000);
+        }
+
+        function copyPhone(event) {
+            event.preventDefault();
+            navigator.clipboard.writeText('0442688862');
+            
+            const toast = document.getElementById('toast');
+            toast.classList.add('show');
+            
+            setTimeout(() => {
+                toast.classList.remove('show');
+            }, 3000);
+        }
+  </script>
 
   
 

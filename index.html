@@ -2,308 +2,159 @@
 <html lang="fi">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <meta name="format-detection" content="telephone=no">
-    <meta name="google-site-verification" content="uuW3flw-T-m_heOoVghAzGo0Gd1B-5K8pMfeoofik28" />
-    <meta name="description" content="Otto Suominen - Tekniikan kandidaatti ja tulevaisuuden sähkötekniikan ammattilainen. Tutustu koulutukseeni, työkokemukseeni ja osaamiseeni.">
-    <meta name="keywords" content="Otto Suominen, sähkötekniikka, LUT yliopisto, sähköinsinööri, työkokemus, harjoittelija, Sallilan Sähkönsiirto, TkK, työhistoria, CV, ansioluettelo">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Otto Suominen - Ylioppilas ja tulevaisuuden sähkötekniikan ammattilainen. Tutustu koulutukseeni, työkokemukseeni ja osaamiseeni.">
+    <meta name="keywords" content="Otto Suominen, sähkötekniikka, LUT yliopisto, sähköinsinööri, työkokemus, harjoittelija, Sallilan Sähkönsiirto, ylioppilas, työhistoria, CV, ansioluettelo">
+    
     <title>Otto Suominen</title>
 
-    <!-- Tyylit -->
-    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" type="text/css" href="style.css">
     <link rel="canonical" href="https://ottosuominen.github.io/CV/">
-    <link rel="stylesheet" type="text/css" href="https://ottosuominen.github.io/CV/style.css">
 
     <!-- Favikoni -->
     <link rel="icon" href="favicon.ico" type="image/x-icon">
+
 </head>
+<body>
 
-<body class="w3-light-grey">
+    <div id="toast" class="toast">
+        <span>✅</span>
+        <span>Sähköposti/numero kopioitu!</span>
+    </div>
 
-  <!-- Navbar heti body-tagin alussa -->
-  <div id="navbar">
-    <a href="https://ottosuominen.github.io/CV/index.html">Portfolio</a>
-    <a href="https://ottosuominen.github.io/CV/projects.html">Projektit</a>
-  </div>
+  
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <div class="profile-image">
+                <img src="profiillikuva.png" alt="Profiilikuva" class="profile-img">
+            </div>
+            <h1>Otto Suominen</h1>
+            <p class="subtitle">Memento Mori, Ergo Vive</p>
+            <div class="scroll-indicator">
+            <div style="font-size: 1.5rem;">↓</div>
+        </div>
+        </div>
+    </section>
 
-  <!-- Page Container, asetetaan maksimileveys mobiilinäytöille sopivaksi -->
-  <div class="w3-content w3-margin-top">
-    
-    <!-- The Grid, yhden sarakkeen asettelu -->
-    <div class="w3-row-padding">
-      <div class="w3-col m12">
-        
-        <!-- Profiiliosio -->
-        <div class="w3-container w3-card w3-white w3-margin-bottom profil-container">
-          <picture>
-            <source srcset="https://ottosuominen.github.io/CV/otto_suominen_cv_profile.webp" type="image/webp">
-            <img src="https://ottosuominen.github.io/CV/otto_suominen_cv_profile.png" class="profile-pic" alt="Avatar">
-        </picture>
-            <div class="profile-info">
-                <h5 class="w3-text-grey">
-                    <i class="material-icons w3-xxlarge w3-text-teal">person</i>
-                    Otto Suominen
-                </h5>
-                <h6 class="w3-text-grey">
-                    <b>TkK ja tulevaisuuden <br> sähkötekniikan ammattilainen</b>
-                </h6>
+
+    <!-- About Section -->
+    <section class="about-section">
+        <div class="section">
+            <h2 class="section-title">Morjesta</h2>
+            <div class="about-content">
+                <p class="about-text">
+                    Opiskelen sähkötekniikkaa maisterivaiheessa Lappeenrannassa ja työskentelen Sallila sähkönsiirrolla, jossa pääsen
+                    seuraamaan sähkön jakelua kulutukseen asti. Maisteriopinnot keskittyvät sähköverkkoihin ja -markkinoihin.
+                      Minua kiinnostaa erityisesti, miten data, teknologia ja sähköjärjestelmät yhdistyvät 
+                      tulevaisuuden energiaratkaisuissa. Vapaa-ajalla seuraan alani kehitystä, osakepörssejä, tutkin uusia
+                       teknologioita ja toimin yrittäjänä. Tällä hetkellä olen syventynyt estimointiteoriaan.
+                </p>
             </div>
         </div>
+    </section>
 
-        <div class="flex-container">
-          <!-- Vasen sarake: Koulutus ja Muut koulutukset -->
-          <div class="flex-item left">
-            <!-- Koulutus -->
-            <div class="w3-container w3-card w3-white w3-margin-bottom">
-                <h5 class="w3-text-grey">
-                    <i class="material-icons w3-xxlarge w3-text-teal">school</i>
-                    Koulutus
-                </h5>
-                <div class="w3-container">
-                  <h6 class="w3-opacity">
-                    <b>Sähkötekniikan kandidaatti ja diplomi-insinööri</b>
-                  </h6>
-                  <p>
-                    <span class="w3-text-teal">
-                      <i class="material-icons w3-margin-right">date_range</i>
-                      Lut Yliopisto / Aug 2022 –
-                      <span class="w3-tag w3-teal w3-round text-black">Nykyinen</span>
-                    </span>
-                    <span class="break-line">Kandidaatintutkinto</span>
-                  </p>
-                  <!-- lista, jossa on pallukat ja sisennys -->
-                  <ul class="break-list">
-                    <li>Sivuaine: Energiatalous</li>
-                    <li class="link-container">
-                      <a href="https://lutpub.lut.fi/handle/10024/169232"
-                         target="_blank"
-                         title="Avaa linkki uudessa ikkunassa"
-                         class="w3-text-teal">
-                        Kandidaatintyö
-                        <i class="material-icons w3-icon-sm" style="vertical-align:middle;">
-                          open_in_new
-                        </i>
-                      </a>
-                    </li>
-                  </ul>
-                </div>
-
-              <div class="w3-container">
-                <h6 class="w3-text-grey"><b>Ylioppilas</b></h6>
-                <p class="w3-text-teal">
-                  <i class="material-icons w3-margin-right">date_range</i>
-                  Loimaan lukio / Aug 2018 - Jun 2021
-                </p>
-              </div>
-              <hr>
-        
-              <!-- Muut koulutukset -->
-              <h5 class="w3-text-grey">
-                <i class="material-icons w3-xxlarge w3-text-teal">badge</i>
-                Muut koulutukset
-            </h5>
-              <div class="w3-container">
-                <h6 class="w3-text-grey">Varusmiespalvelus</h6>
-                <p class="w3-text-teal">
-                  <i class="material-icons w3-margin-right">date_range</i>
-                  Porin Prikaati / Jan 2022 - Jun 2022
-                </p>
-                
-                <h6 class="w3-text-grey">Pelinohjaaja koulutus</h6>
-                <p class="w3-text-teal">
-                  <i class="material-icons w3-margin-right">date_range</i>
-                  Loimaan palloseura LOPS / May 2016
-                </p>
-                
-                <h6 class="w3-text-grey">Sähkötyöturvallisuuskortti (SFS6002)</h6>
-                <p class="w3-text-teal">
-                  <i class="material-icons w3-margin-right">date_range</i>
-                  May 2023
-                </p>
-                
-                <h6 class="w3-text-grey">SPR Hätäensiapukurssi</h6>
-                <p class="w3-text-teal">
-                  <i class="material-icons w3-margin-right">date_range</i>
-                  May 2023
-                </p>
-              </div>
+    <!-- Main Navigation Section -->
+    <section class="navigation-section">
+        <h2 class="section-title">Tutustu</h2>
+        <div class="cards-grid">
+            <div class="card">
+                <div class="card-icon">🚀</div>
+                <h3>Projektit</h3>
+                <p>Täältä löydät värkkäämäni projektit.</p>
+                <a href="projects.html" class="card-link">Tästä projekteihin</a>
             </div>
-          </div>
+            
+            <div class="card">
+                <div class="card-icon">📄</div>
+                <h3>Portfolio</h3>
+                <p>Ammatillinen taustani, koulutukseni ja tekninen osaamiseni.</p>
+                <a href="portfolio.html" class="card-link">Tästä portfolioon</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact-section">
+        <div class="section">
+            <h2 class="section-title">Ollaan yhteyksissä</h2>
+            <div class="contact-links">
+                <a href="#" onclick="copyEmail(event)" class="contact-link">📧 Sähköposti</a>
+                <a href="#" onclick="copyPhone(event)" class="contact-link">📱 Puhelin</a>
+                <a href="https://www.linkedin.com/in/otto-suominen-9b357b312/" class="contact-link">💼 LinkedIn</a>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        // Smooth scrolling for the scroll indicator
+        document.querySelector('.scroll-indicator').addEventListener('click', function() {
+            document.querySelector('.about-section').scrollIntoView({
+                behavior: 'smooth'
+            });
+        });
+
+        // Add smooth parallax effect to hero with different speeds for background and content
+        let ticking = false;
         
-          <!-- Oikea sarake: Profiili ja osaaminen -->
-          <div class="flex-item right">
-            <div class="w3-container w3-card w3-white w3-margin-bottom">
-                <h5 class="w3-text-grey">
-                    <i class="material-icons w3-xxlarge w3-text-teal">engineering</i>
-                    Profiili
-                </h5>
-              
-                <p>Olen tekniikan kandidaatti ja tulevaisuuden sähkötekniikan DI. Minulla on kokemusta eri sähkönsiirron työtehtävistä, tekniikan alojen kokoonpano-työskentelystä ja suunnittelusta.</p>
-                <hr>
-                <h5 class="w3-text-grey">
-                    <i class="material-icons w3-xxlarge w3-text-teal">settings</i>
-                    Tietotaito
-                </h5>
-                <ul class="w3-small">
-                  <li><b>Sähkötekniikka</b></li>
-                  <li><b>Energiatalous</b></li>
-                  <li><b>Trimble</b></li>
-                  <li><b>Aidon</b></li>
-                  <li><b>Landis+Gyr</b></li>
-                  <li><b>Rajapinta työskentely</b></li>
-                </ul>
-                <hr>
-                <h5 class="w3-text-grey">
-                    <i class="material-icons w3-large w3-text-teal">language</i>
-                    Kielitaito
-                </h5>
-                <p>Suomi</p>
-                <div class="w3-light-grey w3-round-xlarge">
-                  <div class="w3-round-xlarge w3-teal" style="height:12px;width:100%"></div>
-                </div>
-                <p>Englanti</p>
-                <div class="w3-light-grey w3-round-xlarge">
-                  <div class="w3-round-xlarge w3-teal" style="height:12px;width:90%"></div>
-                </div>
-                <p>Ruotsi</p>
-                <div class="w3-light-grey w3-round-xlarge">
-                  <div class="w3-round-xlarge w3-teal" style="height:12px;width:35%"></div>
-                </div>
-              </div>
-          </div>
-        </div>     
-      
+        /* Päivitetty parallax-effect */
+        function updateParallax() {
+            const scrolled = window.pageYOffset;
+            const heroContent = document.querySelector('.hero-content');
+            
+            if (heroContent && scrolled < window.innerHeight) {
+                const opacity = Math.max(0.01, 1 - (scrolled / (window.innerHeight * 0.8))); 
+                heroContent.style.opacity = opacity;
+                heroContent.style.transform = `translateY(${scrolled * 0.2}px)`; 
+            }
+            ticking = false;
+        }
 
-      <!-- Työkokemus-->
-<div class="w3-container w3-card w3-white w3-margin-bottom">
-    <h5 class="w3-text-grey w3-padding-16">
-        <i class="material-icons w3-margin-right w3-xxlarge w3-text-teal">work</i>Työkokemus
-    </h5>
-    
-    <div class="w3-container">
-        <h5 class="w3-opacity"><b>Harjoittelija / Sallilan Sähkönsiirto Oy</b></h5>
-        <p class="w3-text-teal">
-          <i class="material-icons w3-margin-right">date_range</i>
-          Apr 2023 - <span class="w3-tag w3-teal w3-round text-black">Nykyinen</span>
-        </p>
-        <p>Sallilan Sähkönsiirto Oy:llä toimin kesän ajan täysipäiväisesti ja jatkoin tuntityöntekijänä opintojeni ohella. Työtehtäviäni oli avustavat mittaroinnin ja sähkönsiirron tehtävät.
-           Päätehtäviäni oli työmääräinten teko ja niiden tilan valvominen. Tämä edellytti järjestelmien jatkuvaa seurantaa ja tapahtumien dokumentointia. 
-           Päivitin myös Sallilan radiosuunnitelman ulkoasun ja sisällön JavaScript-kielellä omaa työtä helpottaakseni. Lisäksi päivitin
-           verkkomallinnuksen tietoja GPS-paikannuksen avulla kerättyjen mittausten perusteella. Kartan päivitettyä tietokantaa hyödynnettiin yhteistyössä HeadPower Oy:n
-           kanssa mittarinvaihtotyömääräinten tekoon automaation kautta. Radiosuunnitelman hahmotelman löydät alla olevasta linkistä.
-           Kohteita ja niiden sijainteja on muutettu turvallisuussyistä.
-        </p>
-        <p class="link-container">
-            <a href="https://ottosuominen.github.io/CV/Radiosuunnitelma.html" target="_blank" title="Avaa linkki uudessa ikkunassa" style="text-decoration: none;">
-                <i class="material-icons w3-margin-right">map</i>
-                <span class="w3-opacity link-text">Karttasovellus</span>
-                <i class="material-icons" style="font-size: 1em;">open_in_new</i>
-            </a>
-        </p>
-        <hr>
-    </div>
+        window.addEventListener('scroll', function() {
+            if (!ticking) {
+                requestAnimationFrame(updateParallax);
+                ticking = true;
+            }
+        });
 
-    <div class="w3-container">
-        <h5 class="w3-opacity"><b>Tuntiopettaja</b></h5>
-        <p class="w3-text-teal">
-            <i class="material-icons w3-margin-right">date_range</i>
-            Lut Yliopisto / Jan 2023 - May 2023
-        </p>
-        <p>Toimin tuntiopettajana ABB-luokassa, missä järjestin räätälöityjä harjoituksia
-           ja esityksiä lukio- ja yläkoululaisille. Nämä oppitunnit kattoivat aiheita,
-           kuten sähkönkulutusta, erilaisia sähköntuotantoprosesseja sekä niiden vaikutuksia ilmastoon.
-           Lisäksi pidin tuulituotantorastia, missä opiskelijat pääsivät rakentamaan oman turbiininsa ja testaamaan sen toimintaa.
-        </p>
-        <hr>
-    </div>
+        // Animate cards on scroll
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.animation = 'slideUp 0.6s ease-out forwards';
+                }
+            });
+        });
 
-    <div class="w3-container">
-        <h5 class="w3-opacity"><b>Kokoonpanija</b></h5>
-        <p class="w3-text-teal">
-            <i class="material-icons w3-margin-right">date_range</i>
-            Vallox Oy / Jun 2022 - Aug 2022
-        </p>
-        <p class="w3-text-teal">
-            <i class="material-icons w3-margin-right">date_range</i>
-            Fenestra Oy / Aug 2021 - Dec 2021
-        </p>
-        <p class="w3-text-teal">
-            <i class="material-icons w3-margin-right">date_range</i>
-            Salko Painting Oy / Mar 2021 - Jul 2021
-        </p>
-        <p>Minulla on laaja kokemus erilaisista kokoonpanotöistä. Valloxilla opin ilmastointilaitteiden kokoonpanon eri vaiheista, kuten lämmitysvastusten kokoamisesta ja laitetestauksesta.
-           Fenestran Loimaan toimipisteessä perehdyin ikkunoiden tuotannon eri vaiheisiin, mukaan lukien ikkunanprofiilien työstö ja karmien kokoaminen.
-           Lisäksi minulla on kokemusta alumiiniprofiilien jauhemaalauksen eri työvaiheista Salko Painting Oy:ltä.
-        </p>
-        <hr>
-    </div>
+        document.querySelectorAll('.card').forEach(card => {
+            card.style.opacity = '0';
+            card.style.transform = 'translateY(30px)';
+            observer.observe(card);
+        });
 
-    <div class="w3-container">
-        <h5 class="w3-opacity"><b>Ulkoaluetyöntekijä</b></h5>
-        <p class="w3-text-teal">
-            <i class="material-icons w3-margin-right">date_range</i>
-            Suikkilan Lämpö Oy / 2017 - 2020
-        </p>
-        <p>Olen työskennellyt Suikkilan Lämpö Oy:ssä ulkoaluetyöntekijänä useamman kesän ajan.
-           Työtehtäväni sisälsivät monipuolisesti ulkoalueiden hoitotehtäviä sekä asiakaspalvelua.
-           Vastuullani oli oma huoltoalue, jonka sisällä vastasin asiakaspalvelusta,
-           ulkoalueiden siisteydestä, viheralueiden hoidosta, konetyöstä sekä työkoneiden huollosta.
-        </p>
-        <hr>
-    </div>
+        function copyEmail(event) {
+            event.preventDefault();
+            navigator.clipboard.writeText('ottosuominen@icloud.com');
+            
+            const toast = document.getElementById('toast');
+            toast.classList.add('show');
+            
+            setTimeout(() => {
+                toast.classList.remove('show');
+            }, 3000);
+        }
 
-    <div class="w3-container">
-        <h5 class="w3-opacity"><b>Kasvihuonetyöntekijä</b></h5>
-        <p class="w3-text-teal">
-            <i class="material-icons w3-margin-right">date_range</i>
-            Oksasen puutarha Oy / Jul 2017 & 2021
-        </p>
-        <p>Olen työskennellyt kasvihuonetyöntekijänä Oksasen Puutarha Oy:llä
-           kahtena kesänä ja avustin salaatin istutusprosessissa.
-        </p>
-        <hr>
-    </div>
-
-    <div class="w3-container info-links">
-        <h5 class="w3-opacity"><b>Infoa</b></h5>
-        
-        <!-- Linkit -->
-        <p class="w3-text-teal">
-            <i class="material-icons w3-margin-right">work</i>
-            <a href="https://sallilasahkonsiirto.fi/" target="_blank" title="Avaa linkki uudessa ikkunassa">
-                Sallila Sähkönsiirto Oy
-                <i class="material-icons w3-icon-sm">open_in_new</i>
-            </a>
-        </p>
-        
-        <p class="w3-text-teal">
-            <i class="material-icons w3-margin-right">school</i>
-            <a href="https://www.lut.fi/en" target="_blank" title="Avaa linkki uudessa ikkunassa">
-                Lut Yliopisto
-                <i class="material-icons w3-icon-sm">open_in_new</i>
-            </a>
-        </p>
-        
-        <!-- Ei-linkitetyt tiedot -->
-        <p class="w3-text-teal">
-            <i class="material-icons w3-margin-right">email</i>
-            ottosuominen@icloud.com
-        </p>
-        
-        <p class="w3-text-teal">
-            <i class="material-icons w3-margin-right">phone</i>
-            <span>0442688862</span>
-        </p>
-    </div>    
-</div>
-
-      </div> <!-- End Single Column -->
-      
-      </div> <!-- End Grid -->
-  </div> <!-- End Page Container -->
-
-
+        function copyPhone(event) {
+            event.preventDefault();
+            navigator.clipboard.writeText('0442688862');
+            
+            const toast = document.getElementById('toast');
+            toast.classList.add('show');
+            
+            setTimeout(() => {
+                toast.classList.remove('show');
+            }, 3000);
+        }
+    </script>
 </body>
 </html>

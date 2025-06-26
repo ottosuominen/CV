@@ -7,8 +7,6 @@
     
 
     <style>
-
-      /* CSS koodi */ 
       body { 
           margin: 0;   
           padding: 0;   
@@ -652,7 +650,7 @@
             return new L.StreetView(options);
         }
 
-        // Oletetaan, että 'map' on Leaflet-karttasi instanssi
+        // 'map' on Leaflet-kartan instanssi
         var streetViewControl = L.streetView({
             google: true,  // Ota käyttöön Google Street View
         }).addTo(map);

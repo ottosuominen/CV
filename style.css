@@ -3,16 +3,18 @@
     display: flex; /* Käytetään joustavaa layouttia */
     justify-content: center; /* Keskitetään linkit vaakasuunnassa */
     align-items: center; /* Keskitetään linkit pystysuunnassa */
-    padding: 10px; /* Lisätään hieman tilaa ylä- ja alareunaan */
+    padding: 16px 0; /* Yhtenäinen pystysuuntainen padding */
 }
 
 #navbar.navbar-overlay {
     position: absolute;
-    top: 12px;
+    top: 0;
     left: 0;
     right: 0;
     z-index: 20;
     background: transparent;
+    padding-top: 20px; /* Hieman enemmän tilaa yläreunaan indexissä */
+    padding-bottom: 8px; /* Säädetty, ettei nappien väli kasva liikaa */
 }
 
 #navbar.navbar-overlay a {

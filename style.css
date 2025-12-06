@@ -6,6 +6,36 @@
     padding: 10px; /* Lisätään hieman tilaa ylä- ja alareunaan */
 }
 
+#navbar.navbar-overlay {
+    position: absolute;
+    top: 12px;
+    left: 0;
+    right: 0;
+    z-index: 20;
+    background: transparent;
+}
+
+#navbar.navbar-overlay a {
+    background: rgba(255, 255, 255, 0.12);
+    color: #0b2a2a;
+    border-radius: 16px;
+    padding: 8px 18px;
+    transition: color 0.25s ease, background 0.25s ease, filter 0.25s ease, transform 0.2s ease;
+}
+
+#navbar.navbar-overlay a.active {
+    background: #ffffff;
+    color: #00695c;
+    box-shadow: 0 10px 24px rgba(0, 0, 0, 0.12);
+    transform: none;
+}
+
+#navbar.navbar-overlay a:hover {
+    background: #00ffe5;
+    color: #000;
+    filter: none;
+}
+
 /* Linkkien perusasetukset */
 #navbar a {
     text-decoration: none; /* Ei alleviivauksia */

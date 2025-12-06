@@ -41,9 +41,11 @@
     text-decoration: none; /* Ei alleviivauksia */
     color: #000; /* Tekstin väri musta */
     margin: 0 10px; /* Lisää vaakasuoraa tilaa linkkien väliin */
-    padding: 5px 15px; /* Lisää sisäistä tyhjää linkkien ympärille */
+    padding: 8px 18px; /* Lisää sisäistä tyhjää linkkien ympärille */
+    border-radius: 16px; /* Yhtenäinen pillimuoto */
+    background: rgba(0, 0, 0, 0.05); /* Hieman taustaa muille sivuille */
     display: inline-block; /* Varataan tilaa linkkien ympärille */
-    transition: all 0.3s ease-in-out; /* Sulava siirtymä hover-efektille */
+    transition: all 0.25s ease-in-out; /* Sulava siirtymä hover-efektille */
 }
 
 /* Kun linkki on aktiivinen (nykyinen sivu) */
@@ -60,8 +62,8 @@
 #navbar a:hover {
     background-color: #00ffe5; /* korostusväri */
     color: #000; /* Tekstin väri musta */
-    border-radius: 10px; /* Hieman pyöristetyt kulmat */
-    transform: scale(1.1); /* Hieman suurempi koko hoverissa */
+    border-radius: 16px; /* Säilytetään sama pillimuoto */
+    transform: scale(1.06); /* Hieman suurempi koko hoverissa */
 }
 
 /* Flex-kontti */

@@ -102,11 +102,27 @@
 
                 <p>
                   Koska asiakkaiden tarkkoja sijainteja ei voi näyttää, loin sallilalaisille tiheimmin asutuille alueille tiheyskeskittymät ja
-                  generoin pisteet niiden perusteella. Näin kartta pysyy käyttötapauksen mukaisena ilman yksittäisten kohteiden paljastamista.
+                  generoin pisteet niiden perusteella, sekä lisäsin satunnaisesti tasajakautuneita pisteitä harvemmille alueille. Näin kartta pysyy
+                  käyttötapauksen mukaisena ilman yksittäisten kohteiden paljastamista.
                 </p>
 
                 <p>
-                  <a href="Radiosuunnitelma.html" class="card-link">Avaa radiosuunnitelma</a>
+                  Tiheysmalli oli yksinkertainen sekoitus normaalijakaumia: jokaiselle tiheysalueelle annettiin paino ja sijainti, ja
+                  lopullinen piste arvottiin näiden painotetusta yhdistelmästä. Piste hyväksyttiin mukaan vain, jos se osui valitun alueen
+                  rajapolygonin sisään, joka oli Nominatimista haettu kunta. Näin syntyi realistinen jakauma tänne internettiin ilman oikeiden
+                  kohteiden paljastamista.
+                </p>
+
+                <p>
+                  Matemaattisesti tiheät pisteet noudattivat sekoitusmallia
+                  <code>p(x) = Σ w<sub>i</sub> · N(x | μ<sub>i</sub>, Σ)</code> painoilla <code>w<sub>i</sub></code> ja keskuksilla
+                  <code>μ<sub>i</sub></code>, missä <code>Σ w<sub>i</sub> = 1</code>. Harvempien alueiden pisteet tulivat tasajakautuneina
+                  valitun polygonin sisältä <code>(x ~ Uniform(polygon))</code>, ja molemmissa tapauksissa hyväksyttiin vain pisteet, jotka
+                  jäivät rajapolygonin sisään.
+                </p>
+
+                <p>
+                  <a href="Radiosuunnitelma.html" class="card-link thesis-link">Avaa radiosuunnitelma</a>
                 </p>
               </div>
             </div>
@@ -122,7 +138,7 @@
               <div class="w3-container">
                 <p>
                   Olen toteuttanut 
-                  <strong><a href="https://commaconnects.com" target="_blank">Comma Connects Oy:n</a></strong>
+                  <strong>Comma Connects Oy:n</a></strong>
                   sivuston Webflow:lla. Projektissa keskityin yksinkertaiseen, moderniin ja responsiiviseen 
                   ulkoasuun sekä selkeään navigaatioon, jotta ulkoasu mielyttäisi laajaa asiakaskuntaa. Webflow:n visuaalinen käyttöliittymä 
                   yhdistettynä kustomoituihin tyyleihin takasi tyylikkään ja 
@@ -159,46 +175,56 @@
           </h5>
           <div class="w3-container">
             <p>
-              Suoritin kandidaatintyöni Sallila Energia Oy:lle, jossa kehitin mallin aurinkopaneelien 
-              sähköntuotannon arvioimiseksi irradianssimittauksiin perustuen. Työssä hyödynnettiin 
-              Python-ohjelmointia säteily- ja säätietojen noutamiseen Ilmatieteen laitoksen rajapinnasta 
-              sekä datan käsittelyyn ja analysointiin.
+              Suoritin kandidaatintyöni <strong>Sallila Energia Oy:lle</strong> , jossa kehitin yksinkertaisen
+               mallin aurinkopaneelien sähköntuotannon arvioimiseksi irradianssimittauksiin perustuen.
+                Työn lähtökohtana oli arvioida tuotantoa tilanteissa, joissa voimalan omaa mittausdataa ei
+              ole saatavilla tai se on puutteellista. Malli rakensi tuotantoarvion yhdistämällä fysikaalisen
+               laskennan, irradianssidatan ja paneelien ominaisuustiedot, ja sitä testattiin Ilmatieteen
+              laitoksen mittausten avulla, joita kerättiin noin 24 kilometrin päästä aurinkovoimalasta.
             </p>
 
             <p>
-              Mallinnuksessa yhdistettiin vektorilaskentaa, lineaarista regressiota ja spektrikorjausta 
-              ottaen huomioon paneelien asennuskulmat, säteilyn vaikutukset sekä transmittanssi. 
-              Päivitetty versio sisältää merkittäviä parannuksia alkuperäiseen työhön verrattuna, 
-              erityisesti lineaarisen regression ja spektrikorjauksen osalta, mikä paransi mallin 
-              tarkkuutta vaihtelevissa olosuhteissa.
+              Mallinnuksen keskiössä oli paneelien suuntausgeometrian tarkka määrittäminen vektorilaskennalla
+               sekä suoran ja hajautuneen säteilyn huomioiminen optisten transmittanssimallien avulla.
+                Paneelien tuottama teho arvioitiin interpoloimalla valmistajan U–I-käyrät eri irradianssitasoille,
+                 minkä jälkeen tuotantoa voitiin simuloida koko päivän ajalta fysikaalisesti perustellulla
+              tavalla. Merkittävä parannus aiempaan mallinnusversioon syntyi korrelointivaiheessa: alkuperäisessä
+               työssä ennuste pyrittiin sovittamaan todelliseen tuotantoon WRE:n avulla, mutta päivitetyssä
+                versiossa korvasin tämän lineaarisella regressiolla, mikä osoittautui selvästi tehokkaammaksi 
+                tavaksi skaalata ja korreloida malli mittausdataan.
             </p>
 
             <p>
-              Työn tulokset osoittavat, että aurinkovoimalan tuotanto on arvioitavissa aurinkoisina päivinä 
-              hyvin tarkasti, kun ennuste on skaalattu mittausdatan perusteella. Pilvisinä päivinä 
-              tarkkuudessa on havaittavissa vaihtelua, mikä tarjoaa jatkotutkimukselle kiinnostavia 
-              kehityskohteita.
+              Tulokset osoittivat, että aurinkoisina päivinä mallilla saavutettiin erittäin tarkka tuotantoarvio:
+               selitysaste <strong>R²</strong> oli lähes yksi ja <strong>F</strong>-tilaston arvot usein yli 30 000,
+                mikä kertoo käytännössä minimaalisesta virheosuudesta ja vahvasta korrelaatiosta mallin ja mitatun
+                 tuotannon välillä. Pilvisinä päivinä tulokset vaihtelivat enemmän, sillä säteily
+              hajautuu ja poikkeaa mittauspaikasta – tämä näkyi F-tilaston laskuna ja tarkkuuden heikkenemisenä.
             </p>
 
             <p>
-                F-tilaston arvot olivat joillain päivillä poikkeuksellisen suuria (yli 30 000),
-                mikä johtuu siitä, että mallin selitysaste (<strong>R²</strong>) oli hyvin lähellä yhtä.
-                Tämä on odotettavaa lineaarisessa regressiossa, sillä <strong>F kasvaa kääntäen verrannollisesti
-                virheosuuden (1 − R²) pienentyessä</strong>.
-            </p>
-            
-            <p>
-                Sen sijaan <strong>pilvisinä päivinä F-tilasto romahti</strong>, mikä kertoo mallin selitysvoiman
-                heikkenemisestä ja mittausdatan hajonnan kasvusta säteily- ja tuotantoarvojen välillä.
+              Työ avaa jatkokehitykselle suuntia: erityisesti mittausetäisyyden vaikutuksen tarkempi analyysi 
+              (esim. 24 km mittausetäisyyden tuoma virhemarginaali) sekä hybridimallit, jotka yhdistävät
+               fysikaalisen mallinnuksen ja koneoppimisen pilvisyyden ja mikroilmaston vaihteluiden huomioimiseksi.
+                Lisäksi mallia voisi laajentaa sisällyttämällä voimalan sisäiset häviöt sekä vuodenaikojen vaikutukset
+              (lumi, auringon matala kulma).
             </p>
 
 
             <p>
-              <a href="https://lut-my.sharepoint.com/:x:/g/personal/otto_suominen_student_lut_fi/ESoi6-sTh3VGixSohE9uMAoBTrRM2g6-3tcAYJkoIVCrog?e=SfYLHS" class="card-link" target="_blank">Avaa päivitetty malli</a>
+              <a href="https://lutpub.lut.fi/handle/10024/169232" class="card-link thesis-link">Kandidaatintyö</a>
+            </p>
+
+            <p>
+              <a href="https://lut-my.sharepoint.com/:x:/g/personal/otto_suominen_student_lut_fi/ESoi6-sTh3VGixSohE9uMAoBTrRM2g6-3tcAYJkoIVCrog?e=SfYLHS" class="card-link thesis-link" target="_blank">Avaa päivitetty malli</a>
             </p>
           </div>
         </div>
-  
+
+      </div> <!-- End Single Column -->
+    </div> <!-- End Grid -->
+  </div> <!-- End Page Container -->
+</div> <!-- End Page Container (w3-content) -->
 
   <!-- Contact Section -->
     <section class="contact-section">

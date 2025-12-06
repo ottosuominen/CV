@@ -821,11 +821,25 @@ h1 {
     transform: translateX(-4px);
 }
 
+.card-link-block:hover .card-link.thesis-link {
+    color: #009688;
+    transform: translateX(-4px);
+}
+
 .card-link.thesis-link:hover::after {
     transform: scaleX(1);
 }
 
+.card-link-block:hover .card-link.thesis-link::after {
+    transform: scaleX(1);
+}
+
 .card-link.thesis-link:hover::before {
+    animation-play-state: paused;
+    transform: translateX(8px);
+}
+
+.card-link-block:hover .card-link.thesis-link::before {
     animation-play-state: paused;
     transform: translateX(8px);
 }

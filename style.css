@@ -8,13 +8,12 @@
 
 #navbar.navbar-overlay {
     position: absolute;
-    top: 8px;
+    top: 12px;
     left: 0;
     right: 0;
     z-index: 20;
     background: transparent;
-    padding-top: 16px; /* Hieman enemmän tilaa yläreunaan indexissä */
-    padding-bottom: 0; /* Tiiviimpi, jotta korkeus vastaa muita */
+    padding: 12px 0; /* Sama korkeus kuin muilla, mutta eri värit */
 }
 
 #navbar.navbar-overlay a {

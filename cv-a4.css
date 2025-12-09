@@ -113,6 +113,7 @@
     margin: 4px 0 8px;
     text-align: justify;
     hyphens: auto;
+    word-break: break-word;
 }
 
 .a4-item {
@@ -124,6 +125,7 @@
     justify-content: space-between;
     gap: 10px;
     align-items: baseline;
+    flex-wrap: wrap;
 }
 
 .a4-meta {
@@ -240,7 +242,7 @@
     .a4-sheet {
         width: auto;
         min-height: auto;
-        padding: 16px;
+        padding: 12px;
     }
 
     .a4-two-col {
@@ -254,6 +256,20 @@
 
     .a4-contact {
         width: 100%;
+    }
+
+    .link-with-icon {
+        flex-wrap: wrap;
+    }
+
+    .a4-item-head {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 2px;
+    }
+
+    .a4-meta {
+        white-space: normal;
     }
 }
 

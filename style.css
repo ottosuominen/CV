@@ -437,7 +437,7 @@ ul.w3-small li {
     display: none !important;
   }
 
-  body {
+  body:not(.a4-body) {
     transform: scale(0.8); /* Skaalaa sisällön automaattisesti */
     transform-origin: top left;
   }
@@ -611,26 +611,28 @@ body {
     50% { transform: translateY(-15px) rotate(3deg); }
 }
 
-.hero-content {
-    text-align: center;
-    color: white;
-    z-index: 3; /* Hero-sisältö ylimmäiseksi */
-    position: relative;
-}
 
 .profile-image {
-    width: min(30vw, 250px);
-    height: min(30vw, 250px);
-    border-radius: 50%;
+    position: relative;
+    width: 250px;
+    height: 250px;
     margin: 0 auto 2rem;
+    background: white;
+    border-radius: 50%;
     box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
-    transition: transform 0.3s ease;
     display: flex;
     align-items: center;
     justify-content: center;
-    animation: pulse 2s ease-in-out infinite;
-    background: #f0f0f0;
-    overflow: hidden;
+    z-index: 2;
+}
+
+.profile-link {
+    display: inline-block;
+}
+
+.profile-link:focus-visible {
+    outline: 2px solid #fff;
+    outline-offset: 4px;
 }
 
 .profile-img {
@@ -638,17 +640,38 @@ body {
     height: 100%;
     border-radius: 50%;
     object-fit: cover;
-    display: block;
 }
 
-
-.profile-image:hover {
-    transform: scale(1.05);
+.circular-text {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    animation: rotate 10s linear infinite;
+    z-index: 1;
 }
 
-@keyframes pulse {
-    0%, 100% { box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3); }
-    50% { box-shadow: 0 25px 50px rgba(0, 0, 0, 0.4); }
+.circular-text text {
+    fill: currentColor;
+    font-size: 24px;
+    font-weight: bold;
+    letter-spacing: 8px;
+    text-transform: uppercase;
+}
+
+@keyframes rotate {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+/* Hover-efekti */
+.profile-link:hover .circular-text {
+    animation-duration: 5s;
 }
 
 h1 {
@@ -656,6 +679,7 @@ h1 {
     font-weight: 300;
     margin-bottom: 1rem;
     animation: slideUp 1s ease-out;
+    color: white;
 }
 
 .subtitle {
@@ -663,6 +687,7 @@ h1 {
     opacity: 0.9;
     margin-bottom: 2rem;
     animation: slideUp 1s ease-out 0.2s both;
+    color: white;
 }
 
 @keyframes slideUp {
@@ -684,6 +709,7 @@ h1 {
     animation: bounce 2s infinite;
     font-size: 1.5rem;
     opacity: 0.8;
+    color: white;
 }
 
 
@@ -1004,6 +1030,323 @@ h1 {
 
 .toast.show {
     transform: translateX(0);
+}
+
+/* A4-CV asettelu */
+.a4-body {
+    padding: 20px;
+    background: #e7e7e7;
+}
+
+.a4-sheet {
+    /* Perusulkonäkö */
+    background: #fff;
+    color: #222;
+    box-shadow: 0 12px 36px rgba(0, 0, 0, 0.12); /* Varjo antaa 'paperi'-ilmeen */
+    position: relative; /* Jos sisältö vaatii absoluuttista/suhteellista asemointia */
+    width: 210mm;
+    max-width: 100%;
+    min-height: 297mm;
+    margin: 10mm auto;
+    padding: 18mm 16mm 18mm 16mm;
+}
+
+.a4-header {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+    margin-bottom: 12px;
+}
+
+.a4-title-block {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+.a4-avatar-wrap {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.a4-title-text {
+    text-align: center;
+}
+
+.a4-header h1 {
+    margin: 0;
+    font-size: 2rem;
+    line-height: 1.2;
+}
+
+.a4-subtitle {
+    margin: 4px 0 0;
+    font-weight: 500;
+    color: #00695c;
+}
+
+.a4-contact {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 4px;
+    font-size: 0.95rem;
+}
+
+.a4-contact i {
+    font-size: 1.05rem;
+    vertical-align: middle;
+    color: #009688;
+    margin-right: 6px;
+}
+
+.a4-avatar {
+    width: 114px;
+    height: 114px;
+    object-fit: cover;
+    border-radius: 50%;
+    background: #fff;
+    border: 2px solid #009688;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+.a4-columns {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 14px;
+}
+
+.a4-two-col {
+    --col-left-offset: 0mm;
+    --col-right-offset: 0mm;
+    display: flex;
+    gap: 18px;
+    align-items: flex-start;
+}
+
+.a4-col {
+    flex: 1;
+    min-width: 0;
+}
+
+.a4-col-left {
+    padding-top: var(--col-left-offset);
+}
+
+.a4-col-right {
+    padding-top: var(--col-right-offset);
+}
+
+.a4-section h3 {
+    margin: 12px 0 6px;
+    font-size: 1.05rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.a4-section-right {
+    margin-top: -10px;
+}
+
+.a4-section p {
+    margin: 4px 0 8px;
+    text-align: justify;
+    hyphens: auto;
+}
+
+.a4-item {
+    margin-bottom: 10px;
+}
+
+.a4-item-head {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+    align-items: baseline;
+}
+
+.a4-meta {
+    color: #555;
+    font-size: 0.85rem;
+    white-space: nowrap;
+}
+
+.compact-list {
+    margin: 4px 0 6px 18px;
+    padding: 0;
+    list-style: disc;
+}
+
+.compact-list li {
+    margin-bottom: 4px;
+    line-height: 1.35;
+}
+
+.contact-list {
+    list-style: none;
+    margin-left: 0;
+}
+
+.contact-list li {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 6px;
+}
+
+.contact-list a {
+    color: inherit;
+    text-decoration: none;
+}
+
+.contact-list .link-with-icon {
+    font-weight: 600;
+}
+
+.contact-list a:hover {
+    color: #00695c;
+    text-decoration: underline;
+}
+
+.contact-list i.material-icons {
+    font-size: 1.1rem;
+    color: #009688;
+}
+
+.link-with-icon {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    color: #009688;
+    font-weight: 700;
+    text-decoration: none;
+}
+
+.link-with-icon:hover {
+    color: #00695c;
+    text-decoration: underline;
+}
+
+.link-external-icon {
+    font-size: 1em !important;
+    color: #000 !important; /* estä periytyminen linkin väristä */
+}
+
+/* Yhteystietolistan linkeille käänteinen väri: teksti musta, ikoni vihreä */
+.contact-list .link-with-icon {
+    color: #009688;
+    font-size: 0.9rem;
+}
+
+.contact-list .link-external-icon {
+    color: #000;
+}
+
+.two-columns {
+    columns: 2;
+    column-gap: 18px;
+}
+
+.skills-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 6px 0 10px;
+}
+
+.skills-table th,
+.skills-table td {
+    text-align: left;
+    padding: 4px 8px 4px 0;
+    vertical-align: top;
+}
+
+.skills-table th {
+    font-weight: 700;
+    border-bottom: 1px solid #ccc;
+}
+
+.skills-table tbody tr + tr td {
+    border-top: 1px solid #e5e5e5;
+}
+
+.a4-link {
+    display: inline-block;
+    color: #009688;
+    text-decoration: none;
+    font-weight: 600;
+    margin-top: 4px;
+}
+
+.a4-link:hover {
+    color: #00695c;
+}
+
+.a4-contact-bottom {
+    position: static;
+    left: auto;
+    bottom: auto;
+    margin-top: 12px;
+}
+
+@media screen and (max-width: 800px) {
+    .a4-sheet {
+        width: auto;
+        min-height: auto;
+        padding: 16px;
+    }
+
+    .a4-two-col {
+        flex-direction: column;
+    }
+
+    .a4-header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .a4-contact {
+        width: 100%;
+    }
+
+    .two-columns {
+        columns: 1;
+    }
+}
+
+@media print {
+    /* Piilota ei-toivotut elementit */
+    .a4-body #navbar,
+    .a4-body .toast {
+        display: none !important;
+    }
+
+    /* Aseta varsinainen paperin koko ja tulostusmarginaalit */
+    @page {
+        size: A4;
+        margin: 0; /* Asettaa paperin reunaan 10mm marginaalin */
+    }
+
+
+    .a4-sheet {
+        margin: 0;
+        padding: 0; 
+        box-shadow: none !important;
+        background: #fff !important;
+
+        /* Aseta tiukka korkeus estämään ylimääräinen tila sivun alaosassa */
+        height: 297mm; 
+        
+        /* Poista nämä, koska @page:n tulisi määrittää käytettävissä oleva leveys */
+        /* width: 210mm; 
+        min-height: 297mm; */ 
+    }
+
+    /* Varmista taustaväri */
+    body, .a4-body {
+        background: #fff !important;
+    }
 }
 
 @media (max-width: 768px) {

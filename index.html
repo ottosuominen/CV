@@ -9,6 +9,7 @@
     <title>Otto Suominen</title>
 
     <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="stylesheet" type="text/css" href="spinning_text.css">
     <link rel="canonical" href="https://ottosuominen.github.io/CV/">
 
     <!-- Favikoni -->
@@ -39,16 +40,20 @@
   
     <!-- Hero Section -->
     <section class="hero">
-        <div class="hero-content">
-            <div class="profile-image">
-                <img src="profiillikuva.png" alt="Profiilikuva" class="profile-img">
-            </div>
-            <h1>Otto Suominen</h1>
-            <p class="subtitle">Memento Mori, Ergo Vive</p>
-            <div class="scroll-indicator">
-            <div style="font-size: 1.5rem;">↓</div>
+        <div class="container">
+        <div class="profile-wrapper">
+            <div class="rotating-text" id="rotatingText"></div>
+            <a href="cv-a4.html" target="_blank" rel="noreferrer" class="profile-link">
+                <div class="profile-image">
+                    <img src="profiillikuva.png" alt="Otto Suominen">
+                </div>
+            </a>
         </div>
-        </div>
+        
+        <h1>Otto Suominen</h1>
+        <p class="subtitle">Memento Mori, Ergo Vive</p>
+        <div class="arrow">↓</div>
+    </div>
     </section>
 
 
@@ -99,6 +104,17 @@
     </section>
 
     <script>
+
+        const text = "AVAA CV • AVAA CV • AVAA CV • ";
+        const rotatingText = document.getElementById('rotatingText');
+        
+        for (let i = 0; i < text.length; i++) {
+            const span = document.createElement('span');
+            span.innerText = text[i];
+            span.style.transform = `rotate(${i * (360 / text.length)}deg)`;
+            rotatingText.appendChild(span);
+        }
+
         // Smooth scrolling for the scroll indicator
         document.querySelector('.scroll-indicator').addEventListener('click', function() {
             document.querySelector('.about-section').scrollIntoView({

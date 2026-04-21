@@ -8,7 +8,7 @@
   <!--  portfolio  -->
   <url>
     <loc>https://ottosuominen.github.io/CV/projects.html</loc>
-    <lastmod>2025-01-23</lastmod>
+    <lastmod>2026-04-21</lastmod>
     <priority>1.0</priority>
   </url>
   <!--  Projektit  -->
@@ -21,6 +21,12 @@
   <url>
     <loc>https://ottosuominen.github.io/CV/cv-a4.html</loc>
     <lastmod>2025-01-23</lastmod>
+    <priority>1.0</priority>
+  </url>
+  <!--  sjt harjoitustyö  -->
+  <url>
+    <loc>https://ottosuominen.github.io/CV/sjtht.html</loc>
+    <lastmod>2026-04-21</lastmod>
     <priority>1.0</priority>
   </url>
   <!--  Radiosuunnitelma  -->

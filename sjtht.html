@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="fi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+    <meta name="description" content="Excel-pohjainen sähkönjakeluverkon laskenta ja optimointi – yhteenveto toteutuksesta, tunnusluvuista ja visualisoinneista.">
+    <meta name="keywords" content="Excel, sähkönjakelu, 20-kV, johtolähdön mallintaminen, optimointi, verkkolaskenta, CV, Otto Suominen">
+    <title>20-kv johtolähdön mallintaminen | Otto Suominen</title>
+
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" type="text/css" href="style.css">
+
+    <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+    <link rel="manifest" href="site.webmanifest">
+
+    <style>
+        .excel-page {
+            max-width: 1200px;
+            margin: 0 auto 4rem;
+            padding: 0 16px;
+        }
+
+        .excel-hero {
+            background: linear-gradient(145deg, #e4f6ec 0%, #eef9f2 58%, #f7fcf9 100%);
+            border: 1px solid #c9e4d3;
+            border-radius: 18px;
+            padding: 1.6rem 1.4rem;
+            margin-bottom: 1rem;
+        }
+
+        .excel-hero h1 {
+            margin: 0 0 0.5rem;
+            font-size: clamp(1.35rem, 2.8vw, 2rem);
+            line-height: 1.2;
+            color: #12332d;
+        }
+
+        .excel-hero p {
+            margin: 0.4rem 0;
+            color: #2f3f3b;
+            text-align: left;
+        }
+
+        .excel-badges {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.6rem;
+            margin-top: 1rem;
+        }
+
+        .excel-badge {
+            background: #ffffff;
+            border: 1px solid #d3e7e2;
+            border-radius: 999px;
+            padding: 0.32rem 0.78rem;
+            font-size: 0.88rem;
+            color: #17443d;
+        }
+
+        .excel-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+            gap: 0.9rem;
+            margin: 1rem 0 1.4rem;
+        }
+
+        .excel-metric {
+            background: #ffffff;
+            border: 1px solid #e3e3e3;
+            border-radius: 14px;
+            padding: 0.95rem 1rem;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05);
+        }
+
+        .excel-metric .label {
+            color: #5d5d5d;
+            font-size: 0.86rem;
+            margin-bottom: 0.2rem;
+            display: block;
+        }
+
+        .excel-metric .value {
+            font-size: 1.55rem;
+            line-height: 1.2;
+            font-weight: 700;
+            color: #073b33;
+        }
+
+        .excel-section {
+            background: #fff;
+            border: 1px solid #e5e5e5;
+            border-radius: 14px;
+            padding: 1.1rem 1rem;
+            margin: 1rem 0;
+        }
+
+        .excel-section h2 {
+            margin: 0 0 0.65rem;
+            font-size: 1.2rem;
+            color: #1d3d37;
+        }
+
+        .excel-section p {
+            margin: 0.45rem 0;
+            text-align: left;
+        }
+
+        .excel-formulas {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.55rem;
+            margin-top: 0.65rem;
+        }
+
+        .excel-formula {
+            background: #f4faf8;
+            border: 1px dashed #b8ddd2;
+            border-radius: 10px;
+            padding: 0.48rem 0.62rem;
+            font-family: Consolas, Monaco, "Courier New", monospace;
+            font-size: 0.84rem;
+        }
+
+        .excel-table-wrap {
+            overflow-x: auto;
+        }
+
+        .excel-table {
+            width: 100%;
+            border-collapse: collapse;
+            min-width: 620px;
+        }
+
+        .excel-table th,
+        .excel-table td {
+            border-bottom: 1px solid #ebebeb;
+            padding: 0.55rem 0.5rem;
+            text-align: left;
+            font-size: 0.92rem;
+        }
+
+        .excel-table th {
+            font-weight: 600;
+            background: #f7f9f8;
+            color: #2a423d;
+        }
+
+        .excel-figure-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 0.9rem;
+            margin-top: 0.65rem;
+        }
+
+        .excel-figure {
+            margin: 0;
+            border: 1px solid #ececec;
+            border-radius: 12px;
+            overflow: hidden;
+            background: #fcfcfc;
+        }
+
+        .excel-figure img {
+            display: block;
+            width: 100%;
+            height: auto;
+        }
+
+        .excel-figure figcaption {
+            padding: 0.6rem 0.75rem;
+            font-size: 0.86rem;
+            color: #4d4d4d;
+        }
+
+        .excel-links {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.8rem;
+            margin-top: 0.85rem;
+        }
+
+        .excel-embed {
+            border: 1px solid #e7e7e7;
+            border-radius: 12px;
+            overflow: hidden;
+            background: #ffffff;
+            margin-top: 0.6rem;
+        }
+
+        .excel-embed iframe {
+            width: 100%;
+            height: 760px;
+            border: 0;
+            display: block;
+            overflow: hidden;
+        }
+
+        .excel-note {
+            font-size: 0.9rem;
+            color: #4a4a4a;
+        }
+    </style>
+</head>
+<body class="w3-light-grey">
+
+    <div id="navbar">
+        <a href="index.html">Koti</a>
+        <a href="portfolio.html">Portfolio</a>
+        <a href="projects.html">Projektit</a>
+    </div>
+
+    <div id="toast" class="toast">
+        <span>✅</span>
+        <span>Sähköposti/numero kopioitu!</span>
+    </div>
+
+    <main class="excel-page">
+        <section class="excel-hero">
+            <h1>Sähkönjakelutekniikan harjoitustyö</h1>
+            <p>Tässä työssä rakensin Excel-pohjaisen laskentamallin, jolla vertailtiin keskijänniteverkon saneerausvaihtoehtoja sekä teknisestä että taloudellisesta näkökulmasta.</p>
+            <p>Excelissä yhdistin tekniset reunaehdot, kuten jännitteenaleneman, vikavirran ja kuormitettavuuden, taloudelliseen vertailuun, jossa huomioitiin investoinnit,
+                 häviöt ja keskeytyskustannusvaikutukset. Pythonilla varmistin tulosten loogisuutta ja visualisoin vertailua.</p>
+            <p>Tarkoitus ei ollut tehdä vain yksittäisiä sähköteknisiä tarkistuksia, vaan rakentaa laskentamalli verkon kehittämisvaihtoehtojen vertailuun koko johtolähdön tasolla.
+                 Näin saneerausvalinta voitiin perustella samassa kokonaisuudessa teknisten reunaehtojen, kokonaiskustannuksen ja toteutuskelpoisuuden näkökulmasta.</p>
+            <p><a href="https://lut-my.sharepoint.com/:x:/g/personal/otto_suominen_student_lut_fi/IQATgLPPVQBoTL3dWImkP2wCAWMqae3QIQ4KmOg4JLgi6dU?e=nq9mnW" target="_blank" rel="noopener noreferrer" class="card-link thesis-link">Avaa Excel-laskentatiedosto (SharePoint)</a></p>
+
+        </section>
+
+        <section class="excel-section">
+            <h2>Graafiteorian hyödyntäminen harjoitustyössä</h2>
+            <p>Harjoitustyön laskenta kulminoituu suunnattuun puurakenteiseen verkkomallinnukseen, jossa jokaisella solmulla on vanhempi (parent) ja mahdolliset lapsisolmut. Käytännössä tämä oli tapa muuttaa hajanaiset lähtötiedot laskettavaksi kokonaisuudeksi.</p>
+            <p class="excel-note">1) <strong>root</strong> = syöttöpiste, 2) <strong>junction</strong> = haaroitussolmu, 3) <strong>load</strong> = kuormasolmu / muuntamo.</p>
+            <p class="excel-note">Rakenne on anonymisoitu turvallisuussyistä, mutta <strong>etäisyys juuresta</strong> ja <strong>reunojen pituudet</strong> näytetään oikeilla arvoilla.</p>
+            <p class="excel-note">Kartassa voit näyttää kuormasolmujen etäisyydet sekä halutessa reunapituudet. Hover-teksti näyttää aina valitun solmun tai reunan tarkan arvon.</p>
+            <p>Solmu- ja reunarakenteella koko verkon laskenta voitiin tehdä johdonmukaisesti yhdestä syöttöpisteestä ulospäin. Kun jokaiselle osuudelle tunnetaan topologinen paikka,
+                 voidaan jännitteenalenema, vikavirta ja muut kumulatiiviset suureet johtaa koko verkolle samalla logiikalla ja käyttää tuloksia suoraan saneerausvalinnan perusteluun.</p>
+            <p>Tämän osuuden rakentaminen vei käytännössä suurimman osan harjoitustyöstä. Excel-laskentaa, verkon topologian jäsentämistä ja karttapohjan tekemistä piti kehittää rinnakkain, jotta
+                 tulokset vastasivat samaa rakennetta. Karttapohja koottiin Google My Mapsin avulla. 
+                 Suurin työ ei lopulta ollut itse yhtälöissä, vaan siinä, että verkko piti ensin saada kuvattua loogisesti ja eheästi harjoitustyön ajan puitteissa.</p>
+            <div class="excel-embed">
+                <iframe src="node-logiikka-kartta.html" title="Node logiikan kartta" scrolling="no"></iframe>
+            </div>
+        </section>
+
+        <section class="excel-section">
+            <h2>Excelin pääpointti</h2>
+            <p> Excelin tarkoituksena oli johdinvälikohtainen teknistaloudellinen elinkaarikustannusvertailu, jos alkuperäinen johdin
+                 korvattaisiin jollain valitun listan vaihtoehdoista.</p>
+            <p>Valinnan ehtona oli ratkaisun on tekninen kelvollisuus ja taloudellisuus. </p>
+            <p>Excel toimi tässä työssä päätöksenteon laskentamoottorina, ei pelkkänä taulukkona. Jokaiselle johto-osuudelle arvioitiin vaihtoehdot samalla logiikalla, jotta
+                 voitiin löytää ratkaisu, jossa elinkaarikustannus pysyy hallittuna ja samalla verkon käyttöä rajaavat tekniset ehdot täyttyvät.</p>
+
+            <div class="excel-formulas" aria-label="Esimerkkikaavat">
+                <div class="excel-formula">K_tot = K_inv + K_haviot + K_KAH + K_raivaus</div>
+                <div class="excel-formula">K_tot_per_km = K_tot / pituus_km</div>
+            </div>
+        </section>
+
+        <section class="excel-section">
+            <h2>Jännitteenalenema</h2>
+            <p class="excel-note"> Kuvaaja näyttää jännitteen etäisyyden funktiona erikseen runko- ja haaralinjoille.</p>
+            <p>Jännitteenalenema laskettiin sähkön laadun varmistamiseksi koko säteittäinen verkko huomioiden myös kauimmaisissa pisteissä.
+                Tällä voitiin arvioida nykyisen verkon jännitteenalenemaa eri tilanteissa ja muodostuuko
+                 käyttörajoitteita kuormituksen kasvaessa. Lähtötiedoissa oli annettuna eteläisen jakorajan siirtokyky, jolloin päätettiin tarkastella jännitteenalenemaa
+                  sijaiskytkentätilanteessa lisäämällä 1 MW runkojohtoon yksinkertaisella Excel logiikalla.</p>
+            <div class="excel-figure-grid">
+                <figure class="excel-figure">
+                    <img src="excel_jannitteenalenema.png" alt="Jännitteenalenema kuvaaja u_drop-välilehdestä">
+                    <figcaption>Jännitteenalenema suoraan u_drop-välilehden datasta.</figcaption>
+                </figure>
+            </div>
+        </section>
+
+        <section class="excel-section">
+            <h2>Vikavirtakuvaaja</h2>
+            <p class="excel-note">Kuvaaja näyttää 3-vaiheisen oikosulkuvirran profiilin verkon etäisyyden funktiona.</p>
+            <p>Vikavirran laskenta tehtiin oikosulkukestoisuusvaatimusten tarkistamiseen, jotta jokainen valittu johto-osuus kestää vikatilanteen aiheuttaman lämpörasituksen.
+                 Käytännössä kyse oli termisen keston varmistamisesta: kustannuksiltaan edullinen vaihtoehto hylättiin, jos se ei täyttänyt oikosulkutilanteen teknistä mitoitusta.
+                  Harjoitustyön lähtötiedoissa ei oltu annettuna päämuuntajan kokoluokkaa, jolloin suurta epävarmuutta tuo sen oletettu impedanssi. Pääidea tästä kuitenkin saadaan
+                   selville, eli oikosulkuvirta laskee etäisyyden mukaan ja alkuun pitää sijoittaa paksumpaa poikkipinta-alaista johdinta.</p>
+            <div class="excel-figure-grid">
+                <figure class="excel-figure">
+                    <img src="excel_vikavirta.png" alt="Vikavirtakuvaaja Vikavirta data -välilehdestä">
+                    <figcaption>Vikavirta data -välilehden datasta.</figcaption>
+                </figure>
+            </div>
+        </section>
+
+        <section class="excel-section">
+            <h2>Kaapelien Hintavertailu</h2>
+            <p class="excel-note">Kaaviossa on johdintyypeittäin painotettu elinkaarikustannus (EUR/km).</p>
+            <p>Hintavertailun tarkoitus oli tehdä johdinvalinnasta teknis-taloudellinen eikä vain investointihinnan perusteella tehty päätös.
+                 Vertailussa painotettiin elinkaarikustannusnäkökulmaa diskonttaamalla pitkälle tulevaisuuteen sijoittuvat kustannukset.
+                  Tässä huomioidaan rakentamisen lisäksi häviöiden ja käyttöaikaisten vaikutusten merkitys saneerausvalintaan,
+                  kuten KAH säästöt / tappiot, raivauskustannukset ja tehohäviöt.</p>
+            <p>Kuvaajaa käytettiin johdinvaihtoehtojen vertailuun verkon eri osuuksilla yhdessä teknisten reunaehtojen kanssa.
+                 Saneerausvalinta ei siis ollut yhden yleisesti halvimman kaapelityypin valinta, vaan osuuskohtainen ratkaisu,
+                  jossa kokonaiskustannus ja tekninen toimivuus täyttyvät samanaikaisesti. Tämä kuvaaja kuitenkin kertoo keskimääräisen
+                   kustannuksen jokaiselle kohdalle, jonne johdin teknisesti sopii. Excelissä on näkyvissä pivot taulukko, josta voi suodattaa halutun välin 
+                   jokaiselle johdinosuudelle.</p>
+
+            <p>
+                Käytännössä tämä tulos tarkoitti harjoitustyössä sitä, että maakaapeloinnin elinkaarikustannukset olivat vain aavistuksen kilpailukykyisempiä siirrettävän tehon ollessa maltillinen.
+                 Tekniikan (muuntamot, päätteet tms.) kokonaishintaero kääntää kuitenkin lopullisen kannattavuuden päälaelleen.
+                 Laki kuitenkin edellyttää suurhäiriövarmuuden parantamista, jolloin päätimme paikoittaista maakaapelointia metsä-alueilla annetun budjetin rajoissa.
+                   Mutta haarojen päihin asensimme satelliittimuuntamoita, jolloin ero tekniikoiden välillä ei ollut merkittävä. Hinnat ovat Energiaviraston vuoden 2025
+                    yksikköhintatalukosta, jolloin ne eivät ole eksakteja, mutta harjoitustyön tarkoituksena oli kuitenkin osoittaa kriittistä ajattelua ja laskennallista osaamista.
+            </p>
+            <div class="excel-figure-grid">
+                <figure class="excel-figure">
+                    <img src="excel_kaapelihinta_vertailu.png" alt="Kaapelien hintavertailu 40a painotettu euroa per kilometri">
+                    <figcaption>Kaapelien hintavertailu, 40a painotettu EUR/km.</figcaption>
+                </figure>
+            </div>
+        </section>
+    </main>
+
+    <section class="contact-section">
+        <div class="section">
+            <h2 class="section-title">Ollaan yhteyksissä</h2>
+            <div class="contact-links">
+                <a href="#" onclick="copyEmail(event)" class="contact-link">📧 Sähköposti</a>
+                <a href="#" onclick="copyPhone(event)" class="contact-link">📱 Puhelin</a>
+                <a href="https://www.linkedin.com/in/otto-suominen-9b357b312/" class="contact-link">💼 LinkedIn</a>
+            </div>
+        </div>
+    </section>
+
+    <script>
+       
+
+        function copyEmail(event) {
+            event.preventDefault();
+            navigator.clipboard.writeText('ottosuominen@icloud.com');
+            const toast = document.getElementById('toast');
+            toast.classList.add('show');
+            setTimeout(() => {
+                toast.classList.remove('show');
+            }, 3000);
+        }
+
+        function copyPhone(event) {
+            event.preventDefault();
+            navigator.clipboard.writeText('0442688862');
+            const toast = document.getElementById('toast');
+            toast.classList.add('show');
+            setTimeout(() => {
+                toast.classList.remove('show');
+            }, 3000);
+        }
+    </script>
+</body>
+</html>

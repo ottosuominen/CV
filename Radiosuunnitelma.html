@@ -332,14 +332,32 @@
                         }, 900);
                     });
 
-                    layer.on('mouseout', function () {
+                    layer.on('mouseout', function (e) {
                         clearTimeout(openPopupTimeout);
+
+                        // Tarkista, siirtyykö hiiri popupin sisälle - jos siirtyy, ei suljeta popupia
+                        var related = e.originalEvent && e.originalEvent.relatedTarget;
+                        if (related && related.closest && related.closest('.leaflet-popup')) {
+                            return;
+                        }
+
                         canOpenPopup = false;
                         layer.closePopup();
                     });
 
                     layer.on('mousemove', function () {
                         canOpenPopup = true;
+                    });
+
+                    // Kun popup avataan, kuuntele myös sen oman elementin mouseleave-tapahtumaa
+                    layer.on('popupopen', function (e) {
+                        var popupEl = e.popup.getElement();
+                        if (popupEl) {
+                            L.DomEvent.on(popupEl, 'mouseleave', function () {
+                                canOpenPopup = false;
+                                layer.closePopup();
+                            });
+                        }
                     });
                 }
             });

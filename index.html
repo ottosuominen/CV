@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="fi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Otto Suominen - TkK ja tulevaisuuden sähkötekniikan ammattilainen. Tutustu koulutukseeni, työkokemukseeni ja osaamiseeni.">
+    <meta name="keywords" content="Otto Suominen, sähkötekniikka, LUT yliopisto, sähköinsinööri, työkokemus, harjoittelija, Sallilan Sähkönsiirto, ylioppilas, työhistoria, CV, ansioluettelo">
+    <meta name="google-site-verification" content="uuW3flw-T-m_heOoVghAzGo0Gd1B-5K8pMfeoofik28" />
+
+    <title>Otto Suominen</title>
+
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="stylesheet" type="text/css" href="spinning_text.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+    <link rel="canonical" href="https://ottosuominen.github.io/CV/">
+
+    <!-- Favikoni -->
+    <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+    <link rel="manifest" href="site.webmanifest">
+    <link rel="mask-icon" href="safari-pinned-tab.svg" color="#5bbad5">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="theme-color" content="#ffffff">
+    
+
+</head>
+<body>
+
+    <!-- Navbar -->
+    <div id="navbar" class="navbar-overlay">
+        <a href="index.html" class="active">Koti</a>
+        <a href="portfolio.html">Portfolio</a>
+        <a href="projects.html">Projektit</a>
+    </div>
+
+    <div id="toast" class="toast">
+        <span>✅</span>
+        <span>Sähköposti/numero kopioitu!</span>
+    </div>
+
+  
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+        <div class="profile-wrapper">
+            <div class="rotating-text" id="rotatingText"></div>
+            <a href="cv-a4.html" target="_blank" rel="noreferrer" class="profile-link">
+                <div class="profile-image">
+                    <img src="profiillikuva.png" alt="Otto Suominen">
+                </div>
+            </a>
+        </div>
+        
+        <h1>Otto Suominen</h1>
+        <p class="subtitle">Memento Mori, Ergo Vive</p>
+        <div class="arrow">↓</div>
+    </div>
+    </section>
+
+
+    <!-- About Section -->
+    <section class="about-section">
+        <div class="section">
+            <h2 class="section-title">Morjesta</h2>
+            <div class="about-content">
+                <p class="about-text">
+                    Opiskelen sähkötekniikkaa maisterivaiheessa Lappeenrannassa ja opintoni keskittyvät sähköverkkoihin ja -markkinoihin. Työskentelen sähkönsiirron parissa Sallilalla, missä
+                    seuraan sähkön matkaa jakelusta kulutukseen ja kaikkea siitä väliltä. Olen erityisen kiinnostunut siitä, miten data, 
+                    teknologia ja sähköjärjestelmät muodostavat perustan tulevaisuuden energiaratkaisuille. Vapaa-ajalla seuraan alani tapahtumia, tuijottelen osakefoorumeita ja ratkon shakkipulmia.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Navigation Section -->
+    <section class="navigation-section">
+        <h2 class="section-title">Tutustu</h2>
+        <div class="cards-grid">
+            <a href="projects.html" class="card card-link-block">
+                <!-- Korvattu emoji Google-ikonilla -->
+                <div class="card-icon"><span class="material-symbols-outlined">rocket_launch</span></div>
+                <h3>Projektit</h3>
+                <p>Täältä löydät värkkäämäni projektit.</p>
+                <span class="card-link thesis-link">Tästä projekteihin</span>
+            </a>
+            
+            <a href="portfolio.html" class="card card-link-block">
+                <!-- Korvattu emoji Google-ikonilla -->
+                <div class="card-icon"><span class="material-symbols-outlined">description</span></div>
+                <h3>Portfolio</h3>
+                <p>Ammatillinen taustani, koulutukseni ja tekninen osaamiseni.</p>
+                <span class="card-link thesis-link">Tästä portfolioon</span>
+            </a>
+        </div>
+    </section>
+
+
+   <!-- Contact Section -->
+    <section class="contact-section">
+        <div class="section">
+            <h2 class="section-title">Ollaan yhteyksissä</h2>
+            <div class="contact-links">
+                <a href="#" onclick="copyEmail(event)" class="contact-link">
+                    <span class="material-symbols-outlined">mail</span> Sähköposti
+                </a>
+                <a href="#" onclick="copyPhone(event)" class="contact-link">
+                    <span class="material-symbols-outlined">call</span> Puhelin
+                </a>
+                <a href="https://www.linkedin.com/in/otto-suominen-9b357b312/" class="contact-link" target="_blank" rel="noreferrer">
+                    <span class="material-symbols-outlined">work</span> LinkedIn
+                </a>
+            </div>
+        </div>
+    </section>
+    
+    <script>
+
+        const text = "AVAA CV • AVAA CV • AVAA CV • ";
+        const rotatingText = document.getElementById('rotatingText');
+        
+        for (let i = 0; i < text.length; i++) {
+            const span = document.createElement('span');
+            span.innerText = text[i];
+            span.style.transform = `rotate(${i * (360 / text.length)}deg)`;
+            rotatingText.appendChild(span);
+        }
+
+        // Smooth scrolling for the scroll indicator
+        document.querySelector('.scroll-indicator').addEventListener('click', function() {
+            document.querySelector('.about-section').scrollIntoView({
+                behavior: 'smooth'
+            });
+        });
+
+        // Add smooth parallax effect to hero with different speeds for background and content
+        let ticking = false;
+        
+        /* Päivitetty parallax-effect */
+        function updateParallax() {
+            const scrolled = window.pageYOffset;
+            const heroContent = document.querySelector('.hero-content');
+            
+            if (heroContent && scrolled < window.innerHeight) {
+                const opacity = Math.max(0.01, 1 - (scrolled / (window.innerHeight * 0.8))); 
+                heroContent.style.opacity = opacity;
+                heroContent.style.transform = `translateY(${scrolled * 0.2}px)`; 
+            }
+            ticking = false;
+        }
+
+        window.addEventListener('scroll', function() {
+            if (!ticking) {
+                requestAnimationFrame(updateParallax);
+                ticking = true;
+            }
+        });
+
+        // Animate cards on scroll
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.animation = 'slideUp 0.6s ease-out forwards';
+                }
+            });
+        });
+
+        document.querySelectorAll('.card').forEach(card => {
+            card.style.opacity = '0';
+            card.style.transform = 'translateY(30px)';
+            observer.observe(card);
+        });
+
+        function copyEmail(event) {
+            event.preventDefault();
+            navigator.clipboard.writeText('ottosuominen@icloud.com');
+            
+            const toast = document.getElementById('toast');
+            toast.classList.add('show');
+            
+            setTimeout(() => {
+                toast.classList.remove('show');
+            }, 3000);
+        }
+
+        function copyPhone(event) {
+            event.preventDefault();
+            navigator.clipboard.writeText('0442688862');
+            
+            const toast = document.getElementById('toast');
+            toast.classList.add('show');
+            
+            setTimeout(() => {
+                toast.classList.remove('show');
+            }, 3000);
+        }
+    </script>
+</body>
+</html>

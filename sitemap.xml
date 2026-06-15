@@ -1,0 +1,55 @@
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <!--  Etusivu  -->
+  <url>
+    <loc>https://ottosuominen.github.io/CV/</loc>
+    <lastmod>2025-01-23</lastmod>
+    <priority>1.0</priority>
+  </url>
+  <!--  portfolio  -->
+  <url>
+    <loc>https://ottosuominen.github.io/CV/projects.html</loc>
+    <lastmod>2026-04-21</lastmod>
+    <priority>1.0</priority>
+  </url>
+  <!--  Projektit  -->
+  <url>
+    <loc>https://ottosuominen.github.io/CV/portfolio.html</loc>
+    <lastmod>2025-01-23</lastmod>
+    <priority>1.0</priority>
+  </url>
+  <!--  A4-CV  -->
+  <url>
+    <loc>https://ottosuominen.github.io/CV/cv-a4.html</loc>
+    <lastmod>2025-01-23</lastmod>
+    <priority>1.0</priority>
+  </url>
+  <!--  sjt harjoitustyö  -->
+  <url>
+    <loc>https://ottosuominen.github.io/CV/sjtht.html</loc>
+    <lastmod>2026-04-21</lastmod>
+    <priority>1.0</priority>
+  </url>
+  <!--  Radiosuunnitelma  -->
+  <url>
+    <loc>https://ottosuominen.github.io/CV/radiosuunnitelma.html</loc>
+    <lastmod>2025-01-23</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <!--  Favikoni  -->
+  <url>
+    <loc>https://ottosuominen.github.io/CV/site.webmanifest</loc>
+    <lastmod>2025-01-23</lastmod>
+    <priority>1.0</priority>
+  </url>
+  <!--  Profiilikuvat  -->
+  <url>
+    <loc>https://ottosuominen.github.io/CV/otto_suominen_cv_profile.png</loc>
+    <lastmod>2025-01-23</lastmod>
+    <priority>0.3</priority>
+  </url>
+  <url>
+    <loc>https://ottosuominen.github.io/CV/otto_suominen_cv_profile.webp</loc>
+    <lastmod>2025-01-23</lastmod>
+    <priority>0.3</priority>
+  </url>
+</urlset>
